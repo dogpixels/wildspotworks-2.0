@@ -13,10 +13,10 @@ html {
 
 /* text color & decorations */
 html, a {
-	color: #666;
+	color: #000;
 }
 a:hover {
-	color: #666;
+	color: #000;
 	text-decoration: none;
 }
 #content section a {
