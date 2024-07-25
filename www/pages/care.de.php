@@ -8,7 +8,7 @@
         Eigentlich ist es ganz einfach: Behandle deinen Fursuit genauso, wie du einen klassischen Anzug behandeln würdest, und benutze deinen gesunden Menschenverstand.
     </p>
 
-    <img src="img/pages/care/infoluno.png" alt="" class="uk-float-right uk-hidden@s" />
+    <img src="img/pages/care/infoluno.png" alt="" class="uk-float-right uk-visible@s" />
 
     <h3>Zieh den Suit an!</h3>
     <p>

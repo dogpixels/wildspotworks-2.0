@@ -8,7 +8,7 @@
         Use your common sense, and treat it like you would treat a classic suit.
     </p>
 
-    <img src="img/pages/care/infoluno.png" alt="" class="uk-float-right uk-hidden@s" />
+    <img src="img/pages/care/infoluno.png" alt="" class="uk-float-right uk-visible@s" />
 
     <h3>Put Your Suit On!</h3>
     <p>
