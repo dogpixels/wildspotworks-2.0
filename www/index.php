@@ -124,6 +124,20 @@
 	</head>
 
 	<body>
+		<?php if ($core->current->key === 'en/home' || $core->current->key === 'de/home') { ?>
+			<div uk-slider="autoplay: true">
+				<div class="uk-slider-items uk-child-width-1-1">
+					<?php
+						foreach (scandir('img/pages/home') as $fn) {
+							if (in_array($fn, ['.', '..', '.thumbs']) || is_dir("img/pages/home/${fn}"))
+								continue;
+							echo "<div class=\"uk-cover-container\"><img src=\"img/pages/home/${fn}\" alt=\"\" uk-cover /></div>";
+						}
+					?>
+				</div>
+			</div>
+		<?php } ?>
+
 		<header>
 			<nav uk-scrollspy="cls:uk-animation-slide-bottom-small">
 				<?= $core->get_menu() ?>
