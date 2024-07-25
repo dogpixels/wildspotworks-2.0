@@ -71,14 +71,6 @@
 		<link rel="canonical" href="<?= $core->get_full_url() ?>" />
 
 		<?php 
-		if (isset($core->current->previous)) 
-			echo '<link rel="prev" href="https://www.eurofurence.org/EF' . $core->current->number . '/' . $core->current->previous . '" />' . "\n";
-		
-		if (isset($core->current->next)) 
-			echo '<link rel="next" href="https://www.eurofurence.org/EF' . $core->current->number . '/' . $core->current->next . '" />' . "\n";
-		?>
-
-		<?php 
 		$bcdata = $core->get_breadcrumb_data();
 		$pos = 2;
 		?>
@@ -128,7 +120,6 @@
 
 		<link rel="stylesheet" href="css/uikit.min.css" />
 		<link rel="stylesheet" href="css/main.css" />
-		<link rel="stylesheet" href="css/theme.css" />
 		<link rel="stylesheet" href="css/responsive.css" />
 	</head>
 
