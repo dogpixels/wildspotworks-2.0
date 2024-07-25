@@ -17,7 +17,7 @@
 		<meta name="description" content="<?= $core->current->description ?>" />
 		<meta name="keywords" content="<?= $core->current->keywords ?>" />		
 		<meta name="robots" content="<?= $core->current->robots ?>" />
-		<meta name="author" content="web@eurofurence.org" />
+		<meta name="author" content="luno@dogpixels.net" />
 		<meta name="rating" content="general" />
 		<meta name="theme-color" content="<?= $core->current->themeColor ?>" />
 		<meta name="google" content="notranslate" /><!-- prevent Edge/Bing from translating this page -->
@@ -41,8 +41,8 @@
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@eurofurence" />
-		<meta name="twitter:creator" content="@eurofurence" />
+		<meta name="twitter:site" content="@wildspotworks" />
+		<meta name="twitter:creator" content="@wildspotworks" />
 		<meta name="twitter:title" content="<?= $core->current->title ?>" />
 		<meta name="twitter:description" content="<?= $core->current->description ?>" />
 		<meta name="twitter:image" content="<?= $core->current->ogpImage ?>" />
@@ -54,7 +54,7 @@
 		<meta property="og:description" content="<?= $core->current->description ?>" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="<?= $core->get_full_url() ?>" />
-		<meta property="og:site_name" content="Eurofurence <?= $core->current->number ?> - <?= $core->current->theme ?>" />
+		<meta property="og:site_name" content="WildSpotWorks Fursuits" />
 
 		<link rel="canonical" href="<?= $core->get_full_url() ?>" />
 
@@ -82,8 +82,8 @@
 					"position": 1,
 					"item": 
 					{
-						"@id": "https://www.eurofurence.org",
-						"name": "Eurofurence <?= $core->current->number ?>" 
+						"@id": "https://dogpixels.net/wildspotworks",
+						"name": "WildSpotWorks" 
 					}
 				}
 			<?php foreach ($bcdata as $key => $bc) { ?>
@@ -101,47 +101,15 @@
 		}
 		</script>
 
-		<script type='application/ld+json'> 
-		{
-			"@context": "http://www.schema.org",
-			"@type": "Event",
-			"name": "Eurofurence <?= $core->current->number ?>",
-			"url": "https://www.eurofurence.org",
-			"organizer": {
-				"@name": "Eurofurence e.V.",
-				"url": "https://www.eurofurence.de/"
-			},
-			"description": "The <?= $core->current->ordinal ?> edition of Europe's largest furry convention, themed '<?= $core->current->theme ?>'",
-			"startDate": "<?= $core->current->start ?>",
-			"endDate": "<?= $core->current->end ?>",
-			"eventStatus": "https://schema.org/EventScheduled",
-			"eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-			"image": "<?= $core->base . $core->current->ogpImage ?>",
-			"location": {
-			"@type": "Place",
-			"name": "Estrel Hotel",
-			"sameAs": "http://www.estrel.com",
-			"address": {
-				"@type": "PostalAddress",
-				"streetAddress": "Sonnenallee 225",
-				"addressLocality": "Berlin",
-				"postalCode": "12057",
-				"addressCountry": "Germany"
-		}
-		}}
-		</script>
-
 		<script type="application/ld+json">
 		{
 			"@context": "http://schema.org",
 			"@type": "Organization",
-			"name": "Eurofurence",
-			"url": "https://www.eurofurence.org",
+			"name": "WildSpotWorks",
+			"url": "https://dogpixels.net/wildspotworks",
 			"logo": "<?= $core->base ?>apple_favicon.png",
 			"sameAs": [
-				"https://twitter.com/eurofurence",
-				"https://www.facebook.com/Eurofurence",
-				"https://vimeo.com/eurofurence"
+				"https://twitter.com/wildspotworks"
 			]
 		}
 		</script>
@@ -154,46 +122,13 @@
 
 	<body>
 		<header>
-			<input type="checkbox" id="nav-state" />
-			<label for="nav-state" id="nav-button"></label>
-			<h1><span class="ef-menubutton"></span>Eurofurence <?= $core->current->number ?></h1>
-			<nav id="nav">
-				<a href="home" id="ef-homelink">&lt; Home Page</a>
-				<hr />
+			<nav uk-scrollspy="cls:uk-animation-slide-bottom-small">
 				<?= $core->get_menu() ?>
-				<hr />
-				<h3>News</h3>
-				<div id="news" class="uk-grid-small uk-child-width-1-3@s uk-child-width-1-6@m uk-grid-divider" uk-grid>
-					<div>JavaScript required to view the latest announcements from Eurofurence.</div>
-				</div>
-				<hr />
-				<h3>Countdown</h3>
-				<div class="uk-grid-small uk-child-width-auto" uk-grid uk-countdown="date: <?= $core->config->convention->opening ?>">
-					<div>
-						<div class="uk-countdown-number uk-countdown-days"></div>
-						<div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
-					</div>
-					<div class="uk-countdown-separator">:</div>
-					<div>
-						<div class="uk-countdown-number uk-countdown-hours"></div>
-						<div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Hours</div>
-					</div>
-					<div class="uk-countdown-separator">:</div>
-					<div>
-						<div class="uk-countdown-number uk-countdown-minutes"></div>
-						<div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Minutes</div>
-					</div>
-					<div class="uk-countdown-separator">:</div>
-					<div>
-						<div class="uk-countdown-number uk-countdown-seconds"></div>
-						<div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Seconds</div>
-					</div>
-				</div>
 			</nav>
 		</header>
 
-		<main <?= ($core->current->menuText === 'Home'? ' class="ef-landingpage"' : '') ?>>
-			<div id="content">
+		<main>
+			<div id="content" uk-scrollspy="cls: uk-animation-slide-bottom-small; target: > section; delay: 250">
 				<?= $core->get_content() ?>
 			</div>
 		</main>
