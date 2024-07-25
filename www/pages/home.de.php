@@ -1,26 +1,18 @@
 <section>
-    <div id="ef-condetails">
-        <p>
-            <?= $this->current->theme ?> <br />
-            <?= $this->current->dates ?> <br />
-            <?= $this->current->location ?>
-        </p>
-    </div>
-
-    <div class="uk-column-1-2@l uk-margin-top">
-        <a href="#content" id="scrolldown" uk-scroll="offset: 50"><strong>Scroll Down<br /><span uk-icon="icon: chevron-down"></span></strong></a>
-
-        <h1><?= $this->current->title ?></h1>
-    </div>
-
-    <strong>Deployment Quick Start:</strong>
-    <ul>
-        <li>update <em>partners.json</em> and run <a href="updatepartners.php">updatepartners.php</a> to update / load banners</li>
-        <li>run <a href="?export">/?export</a> to deploy to <em><?= $this->config->staticOut->path ?></em></li>
-    </ul>
-
-</section>
-
-<section>
-    <?php debug($this->current) ?>
+	<h1>Wildspot Works: Individuelle Fursuits und Furry- Kostüme</h1>
+	<div class="uk-column-1-2@l">
+		<div>
+			<p>Wildspot Works ist ein kleines Fursuit Studio aus Deutschland, dass sich darauf spezialisiert hat maßgeschneiderte Tierkostüme sogenannte Fursuits zu bauen.<br />
+			Genau! Ich stelle Fursuits her.<br>
+			Meine Motivation ist es Furry- Kostüme zu bauen die ein Maximum an Tragekomfort bieten, sprich auch bei höheren Temperaturen noch gut benutzbar sind, als auch einfach Menschen damit Freude zu bereiten. <br><br> 
+			Aus diesem Grund bin ich auch im Laufe verschiedener Versuche beim 3D Druck gelandet. Dies ermöglicht mir einerseits einen suit sehr zu individualisieren aber auch durch das geringe Gewicht und die Luftdurchlässigkeit dafür zu sorgen, dass der suit angenehm zu tragen ist.
+			Stilistisch handelt es sich bei meinen Werken um Semi-Realistische Kostüme. Aber verschaff dir doch selbst einen <a href="de/gallery">Überblick</a>.<br><br>
+			Wenn du willst kannst du auch gern <a href="de/prices">deinen eigenen Fursuit bestellen</a> bzw. einen Kostenvoranschlag holen, oder etwas herumstöbern. Hier findest du zum Beispiel <a href="de/tips">nützliche Tipps</a> für die perfekte Fursuit- Performance oder auch <a href="de/care">Pflegehinweise</a>.<br>
+			Eine Sache aber vorweg: Es mag banal klingen aber da es auch um eine Große Menge an Geld geht möchte ich hier noch einmal darauf hinweisen, solltest du dir schon sicher sein, ob du den suit kaufen möchtest oder das nur aus gesellschaftlichem Druck herraus tust um "dazu zu gehören". Nichts ist ärgerlicher als viel Geld für etwas auszugeben, was man am Ende gar nicht möchte...</p>
+		</div>
+		<div id="mt-container" class="mt-container">
+			<div class="mt-body" role="feed">
+				<div class="mt-loading-spinner"></div>
+			</div>
+		</div>
 </section>

@@ -25,6 +25,7 @@
     <h2>Drittsoftware</h2>
     <ul>
         <li><a href="https://getuikit.com/" target="_blank">UIKit &copy; YOOtheme</a> | <a href="https://github.com/uikit/uikit/blob/develop/LICENSE.md">MIT-Lizenz</a></li>
+        <li><a href="https://gitlab.com/idotj/mastodon-embed-timeline" target="_blank">Mastodon Embed Timeline Widged</a> | <a href="https://gitlab.com/idotj/mastodon-embed-timeline/-/blob/master/LICENSE">AGPLv3-Lizenz</a></li>
         <li><a href="https://www.patreon.com/posts/free-font-from-99898740" target="_blank">Zhurzh's Schriftart</a></li>
     </ul>
 </section>
