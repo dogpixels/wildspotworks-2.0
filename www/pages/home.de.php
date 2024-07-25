@@ -10,9 +10,12 @@
 			Wenn du willst kannst du auch gern <a href="de/prices">deinen eigenen Fursuit bestellen</a> bzw. einen Kostenvoranschlag holen, oder etwas herumstöbern. Hier findest du zum Beispiel <a href="de/tips">nützliche Tipps</a> für die perfekte Fursuit- Performance oder auch <a href="de/care">Pflegehinweise</a>.<br>
 			Eine Sache aber vorweg: Es mag banal klingen aber da es auch um eine Große Menge an Geld geht möchte ich hier noch einmal darauf hinweisen, solltest du dir schon sicher sein, ob du den suit kaufen möchtest oder das nur aus gesellschaftlichem Druck herraus tust um "dazu zu gehören". Nichts ist ärgerlicher als viel Geld für etwas auszugeben, was man am Ende gar nicht möchte...</p>
 		</div>
-		<div id="mt-container" class="mt-container">
-			<div class="mt-body" role="feed">
-				<div class="mt-loading-spinner"></div>
-			</div>
-		</div>
+
+		<div 
+			class="consent-container" 
+			data-element-type="iframe"
+			data-attr-height="720"
+			data-attr-width="430"
+			data-attr-src="meow.social"
+		></div>
 </section>

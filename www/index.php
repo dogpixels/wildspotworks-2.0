@@ -118,10 +118,12 @@
 		}
 		</script>
 
-		<link rel="stylesheet" href="css/mastodon-timeline.min.css" />
 		<link rel="stylesheet" href="css/uikit.min.css" />
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/responsive.css" />
+		<?php if ($core->current->key === 'en/home' || $core->current->key === 'de/home') { ?>
+		<link rel="stylesheet" href="css/mastodon-timeline.min.css" />
+		<?php } ?>
 	</head>
 
 	<body>
@@ -200,7 +202,6 @@
 
 		<script src="js/uikit.min.js"></script>
 		<script src="js/uikit-icons.min.js"></script>
-		<script src="js/mastodon-timeline.umd.js"></script>
 		<script>			
 			document.querySelectorAll('nav a:not([href^="<?= $ang ?>"])').forEach(a => {
 				a.remove()
@@ -224,19 +225,6 @@
 				});
 			});
 		</script>
-		<?php if ($core->current->key === 'en/home' || $core->current->key === 'de/home') { ?>
-		<script> // Mastodon Timeline
-			const myTimeline = new MastodonTimeline.Init({
-			instanceUrl: "https://packmates.org",
-			_instanceUrl: "https://meow.social",
-			timelineType: "profile",
-			userId: "109807462716235777",
-			_userId: "108208570107844969",
-			profileName: "@draconigen",
-			dateLocale: "de-DE"
-			});
-		</script>
-		<?php } ?>
 	</body>
 </html>
 <?php $core->end(); ?>
