@@ -29,7 +29,7 @@
         It is recommended to wash all other parts of the suit by hand.<br>
         <br>
         Video Tutorial: <br>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/PfbqBD0-IYc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="consent-container" data-element-type="iframe" data-attr-width="560" data-attr-height="315" data-attr-src="https://www.youtube.com/embed/PfbqBD0-IYc" data-attr-title="YouTube video player" data-attr-frameborder="0" data-attr-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" data-attr-allowfullscreen></div>
     </p>
 
     <h3>The Next Con Seems Years Away - How to Store the Suit</h3>

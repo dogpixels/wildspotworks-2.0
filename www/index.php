@@ -204,6 +204,24 @@
 				a.remove()
 			});
 		</script>
+		<script> // consent to load external content
+			document.querySelectorAll('.consent-container').forEach(container => {
+				container.innerHTML = `<h4>Embedded External Content</h4><p>${container.dataset.attrSrc}</p><p>- click to load -</p>`;
+				if (container.dataset.attrWidth)
+					container.style.width = container.dataset.attrWidth + 'px';
+				if (container.dataset.attrHeight)
+					container.style.height = container.dataset.attrHeight + 'px';
+				container.addEventListener('click', () => {
+					const elem = document.createElement(container.dataset.elementType);
+					for (attr in container.dataset) {
+						if (attr.startsWith('attr')) {
+							elem.setAttribute(attr.toLowerCase().replace(/^attr/, ''), container.dataset[attr]);
+						}
+					};
+					container.replaceWith(elem);
+				});
+			});
+		</script>
 	</body>
 </html>
 <?php $core->end(); ?>
