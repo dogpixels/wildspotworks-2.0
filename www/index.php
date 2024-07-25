@@ -1,12 +1,24 @@
-<?php
-	header("Content-Type: text/html; charset=UTF-8");
+<?php header("Content-Type: text/html; charset=UTF-8");
+	$ang = 'en'; // default language
+	foreach (explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) as $urlseg) {
+		if ($urlseg === 'de' || $urlseg === 'en')
+		{
+			$ang = $urlseg;
+			break;
+		}
+	}
+	if (!isset($ang))
+	{
+		header('Location: en');
+	}
+
 	include("core.php");
 	$core = new EFWebCore("core.config.json");
 ?>
 
 <!DOCTYPE html>
 
-<html prefix="og: http://ogp.me/ns#" lang="en">
+<html prefix="og: http://ogp.me/ns#" lang="<?= $ang ?>">
 	<head>
 		<title><?= $core->current->title ?></title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
