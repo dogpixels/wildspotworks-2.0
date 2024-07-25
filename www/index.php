@@ -190,9 +190,11 @@
 		</footer>
 		<script src="js/uikit.min.js"></script>
 		<script src="js/uikit-icons.min.js"></script>
-		<script src="js/newsagent.js"></script>
-		<script src="js/partners.js"></script>
-		<script src="js/main.js"></script>
+		<script>			
+			document.querySelectorAll('nav a:not([href^="<?= $ang ?>"])').forEach(a => {
+				a.remove()
+			});
+		</script>
 	</body>
 </html>
 <?php $core->end(); ?>
