@@ -1,10 +1,12 @@
-Fursuits made by Wildspotworks
+<section>
+    Fursuits made by Wildspotworks
 
-The following Gallery shows some examples of my recent work. Please note that this Gallery also features some body-only commissions which means I did not built every suit entirely. For more information about each suit just take a look at the dedicated page.
+    The following Gallery shows some examples of my recent work. Please note that this Gallery also features some body-only commissions which means I did not built every suit entirely. For more information about each suit just take a look at the dedicated page.
 
-Further I really want to express my gratitude to the suit owners and their photographers of course, for providing me most of those beautiful pictures here!
+    Further I really want to express my gratitude to the suit owners and their photographers of course, for providing me most of those beautiful pictures here!
 
-Click the Images for more pictures :) 
+    Click the Images for more pictures :) 
+</section>
 
 <script>
     $data = [
