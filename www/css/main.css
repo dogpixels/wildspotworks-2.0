@@ -211,7 +211,7 @@ footer a.wsw-hide-ext:hover > span.uk-icon-button {
   text-align: center;
 }
 .entry {
-  flex: 0 0 calc(30% - 20px);
+  flex: 0 0 calc(250px);
   margin: 10px;
 }
 .entry-button {
