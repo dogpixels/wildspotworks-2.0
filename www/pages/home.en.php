@@ -7,7 +7,7 @@
 			My crafting style is usually semi-realistic but get your own <a href="en/gallery">impressions</a> here.<br><br>
 			If you want to <a href="en/prices">order your own</a> manufactured fursuit check out the pricing-tab, or just hang around to get some <a href="en/tips">tips</a> to improve your fursuit performance.
 		</div>
-		
+
 		<div
 			class="consent-container" 
 			data-element-type="iframe"
