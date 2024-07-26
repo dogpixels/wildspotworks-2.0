@@ -121,9 +121,6 @@
 		<link rel="stylesheet" href="css/uikit.min.css" />
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/responsive.css" />
-		<?php if ($core->current->key === 'en/home' || $core->current->key === 'de/home') { ?>
-		<link rel="stylesheet" href="css/mastodon-timeline.min.css" />
-		<?php } ?>
 	</head>
 
 	<body>
