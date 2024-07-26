@@ -19,3 +19,20 @@
 			data-attr-src="meow.social"
 		></div>
 </section>
+
+<section>
+	const images = [
+		<?php
+			$path = "img/gallery/";
+			$suit = filter_input(INPUT_GET, 'suit', FILTER_SANITIZE_STRING);
+
+			if ($suit) {
+				echo '"' . implode('", "', array_filter(scandir($path . $suit), function($f) {
+					return !in_array($f, ['.', '..', '.thumbs']);
+				})) . '"';
+			}
+		?>
+	];
+
+	console.log(images);
+</section>
