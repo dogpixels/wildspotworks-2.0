@@ -1,13 +1,13 @@
 <?php header("Content-Type: text/html; charset=UTF-8");
-	$ang = 'en'; // default language
+	$lang = 'en'; // default language
 	foreach (explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) as $urlseg) {
 		if ($urlseg === 'de' || $urlseg === 'en')
 		{
-			$ang = $urlseg;
+			$lang = $urlseg;
 			break;
 		}
 	}
-	if (!isset($ang))
+	if (!isset($lang))
 	{
 		header('Location: en');
 	}
@@ -18,7 +18,7 @@
 
 <!DOCTYPE html>
 
-<html prefix="og: http://ogp.me/ns#" lang="<?= $ang ?>">
+<html prefix="og: http://ogp.me/ns#" lang="<?= $lang ?>">
 	<head>
 		<title><?= $core->current->title ?></title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -156,9 +156,9 @@
 					<div>
 						<h3>&copy; WildSpotWorks <?= date("Y"); ?></h3>
 						<ul class="uk-list">
-							<li><a href="<?= $ang ?>/legal">Legal Notice</a></li>
-							<li><a href="<?= $ang ?>/terms">Terms &amp; Conditions</a></li>
-							<li><a href="<?= $ang ?>/privacy">Privacy Policy</a></li>
+							<li><a href="<?= $lang ?>/legal">Legal Notice</a></li>
+							<li><a href="<?= $lang ?>/terms">Terms &amp; Conditions</a></li>
+							<li><a href="<?= $lang ?>/privacy">Privacy Policy</a></li>
 						</ul>
 					</div>
 					
@@ -200,7 +200,7 @@
 		<script src="js/uikit.min.js"></script>
 		<script src="js/uikit-icons.min.js"></script>
 		<script>			
-			document.querySelectorAll('nav a:not([href^="<?= $ang ?>"])').forEach(a => {
+			document.querySelectorAll('nav a:not([href^="<?= $lang ?>"])').forEach(a => {
 				a.remove()
 			});
 		</script>
