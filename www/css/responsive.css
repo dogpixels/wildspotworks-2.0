@@ -42,3 +42,10 @@
 		letter-spacing: normal;
 	}
 }
+
+@media (min-width: 960px) {
+	/* nav addition */
+	.uk-child-width-1-8\@m > * {
+		width: calc(100% / 8);
+	}
+}

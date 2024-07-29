@@ -4,12 +4,7 @@
 		if ($urlseg === 'de' || $urlseg === 'en')
 		{
 			$lang = $urlseg;
-			break;
 		}
-	}
-	if (!isset($lang))
-	{
-		header('Location: en');
 	}
 
 	include("core.php");
