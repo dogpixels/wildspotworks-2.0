@@ -119,7 +119,7 @@
 	</head>
 
 	<body>
-		<?php if ($core->current->key === 'en/home' || $core->current->key === 'de/home') { ?>
+		<?php if (str_starts_with($core->current->uri, 'home')) { ?>
 			<div uk-slider="autoplay: true">
 				<div class="uk-slider-items uk-child-width-1-1">
 					<?php
@@ -151,14 +151,14 @@
 					<div>
 						<h3>&copy; WildSpotWorks <?= date("Y"); ?></h3>
 						<ul class="uk-list">
-							<li><a href="<?= $lang ?>/legal">Legal Notice</a></li>
-							<li><a href="<?= $lang ?>/terms">Terms &amp; Conditions</a></li>
-							<li><a href="<?= $lang ?>/privacy">Privacy Policy</a></li>
+							<li><a href="<?= $lang ?>/legal"><?= $core->config->pages->{$lang . '/legal'}->menuText ?></a></li>
+							<li><a href="<?= $lang ?>/terms"><?= $core->config->pages->{$lang . '/terms'}->menuText ?></a></li>
+							<li><a href="<?= $lang ?>/privacy"><?= $core->config->pages->{$lang . '/privacy'}->menuText ?></a></li>
 						</ul>
 					</div>
 					
 					<div>
-						<h3>Follow Me</h3>
+						<h3><?= $lang === 'de'? 'Andere Kanäle' : 'Follow Me' ?></h3>
 						<div class="uk-button-group uk-width-1-1 uk-margin-small-bottom">
 							<a href="http://www.furaffinity.net/user/lunowroo/" target="_blank" class="wsw-hide-ext">
 								<span class="uk-icon uk-icon-button">
@@ -201,7 +201,7 @@
 		</script>
 		<script> // consent to load external content
 			document.querySelectorAll('.consent-container').forEach(container => {
-				container.innerHTML = `<h4>Embedded External Content</h4><p>${container.dataset.attrSrc}</p><p>- click to load -</p>`;
+				container.innerHTML = `<h4><?= $lang === 'de'? 'Drittanbieter-Inhalt' : 'Third Party Content' ?></h4><p>${container.dataset.attrSrc}</p><p>- <?= $lang === 'de'? 'klicken zum Akzeptieren &amp; Laden' : 'click to allow &amp; load' ?> -</p>`;
 				if (container.dataset.attrWidth)
 					container.style.width = container.dataset.attrWidth + 'px';
 				if (container.dataset.attrHeight)
