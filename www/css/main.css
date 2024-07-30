@@ -3,6 +3,7 @@
 	--main-background: #a8cae9;
 	--footer-background: #302c2b;
 	--footer-hedge-height: 110px;
+	--font-color: #000;
 }
 * {
 	box-sizing: border-box;
@@ -13,10 +14,10 @@ html {
 
 /* text color & decorations */
 html, a {
-	color: #000;
+	color: var(--font-color);
 }
 a:hover {
-	color: #000;
+	color: var(--font-color);
 	text-decoration: none;
 }
 #content section a {
