@@ -232,9 +232,9 @@ footer a.wsw-hide-ext:hover > span.uk-icon-button {
 span.uk-icon {
 	margin-right: 0.25em;
 }
-span.ef-uk-icon-lift {
+span.uk-icon-lift {
 	position: relative;
-	top: -1px;
+	top: -2px;
 }
 [class*="uk-column-"] > * {
 	break-inside: avoid-column;
