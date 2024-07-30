@@ -132,6 +132,10 @@ nav a:hover {
 nav a:active {
 	top: 4px;
 }
+nav span.uk-icon svg {
+	stroke-width: 1.3px;
+	stroke: var(--font-color);
+}
 
 /* body area */
 main {
