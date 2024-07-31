@@ -1,15 +1,10 @@
 <?php header("Content-Type: text/html; charset=UTF-8");
-	$ang = 'en'; // default language
+	$lang = 'en'; // default language
 	foreach (explode('/', parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) as $urlseg) {
 		if ($urlseg === 'de' || $urlseg === 'en')
 		{
-			$ang = $urlseg;
-			break;
+			$lang = $urlseg;
 		}
-	}
-	if (!isset($ang))
-	{
-		header('Location: en');
 	}
 
 	include("core.php");
@@ -18,7 +13,7 @@
 
 <!DOCTYPE html>
 
-<html prefix="og: http://ogp.me/ns#" lang="<?= $ang ?>">
+<html prefix="og: http://ogp.me/ns#" lang="<?= $lang ?>">
 	<head>
 		<title><?= $core->current->title ?></title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -124,7 +119,7 @@
 	</head>
 
 	<body>
-		<?php if ($core->current->key === 'en/home' || $core->current->key === 'de/home') { ?>
+		<?php if (str_starts_with($core->current->uri, 'home')) { ?>
 			<div uk-slider="autoplay: true">
 				<div class="uk-slider-items uk-child-width-1-1">
 					<?php
@@ -156,14 +151,14 @@
 					<div>
 						<h3>&copy; WildSpotWorks <?= date("Y"); ?></h3>
 						<ul class="uk-list">
-							<li><a href="<?= $ang ?>/legal">Legal Notice</a></li>
-							<li><a href="<?= $ang ?>/terms">Terms &amp; Conditions</a></li>
-							<li><a href="<?= $ang ?>/privacy">Privacy Policy</a></li>
+							<li><a href="<?= $lang ?>/legal"><?= $core->config->pages->{$lang . '/legal'}->menuText ?></a></li>
+							<li><a href="<?= $lang ?>/terms"><?= $core->config->pages->{$lang . '/terms'}->menuText ?></a></li>
+							<li><a href="<?= $lang ?>/privacy"><?= $core->config->pages->{$lang . '/privacy'}->menuText ?></a></li>
 						</ul>
 					</div>
 					
 					<div>
-						<h3>Follow Me</h3>
+						<h3><?= $lang === 'de'? 'Andere Kanäle' : 'Follow Me' ?></h3>
 						<div class="uk-button-group uk-width-1-1 uk-margin-small-bottom">
 							<a href="http://www.furaffinity.net/user/lunowroo/" target="_blank" class="wsw-hide-ext">
 								<span class="uk-icon uk-icon-button">
@@ -200,13 +195,13 @@
 		<script src="js/uikit.min.js"></script>
 		<script src="js/uikit-icons.min.js"></script>
 		<script>			
-			document.querySelectorAll('nav a:not([href^="<?= $ang ?>"])').forEach(a => {
+			document.querySelectorAll('nav a:not([href^="<?= $lang ?>"])').forEach(a => {
 				a.remove()
 			});
 		</script>
 		<script> // consent to load external content
 			document.querySelectorAll('.consent-container').forEach(container => {
-				container.innerHTML = `<h4>Embedded External Content</h4><p>${container.dataset.attrSrc}</p><p>- click to load -</p>`;
+				container.innerHTML = `<h4><?= $lang === 'de'? 'Drittanbieter-Inhalt' : 'Third Party Content' ?></h4><p>${container.dataset.attrSrc}</p><p>- <?= $lang === 'de'? 'klicken zum Akzeptieren &amp; Laden' : 'click to allow &amp; load' ?> -</p>`;
 				if (container.dataset.attrWidth)
 					container.style.width = container.dataset.attrWidth + 'px';
 				if (container.dataset.attrHeight)
