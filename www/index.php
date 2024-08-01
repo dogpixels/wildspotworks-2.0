@@ -116,6 +116,9 @@
 		<link rel="stylesheet" href="css/uikit.min.css" />
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/responsive.css" />
+		
+		<script src="js/uikit.min.js"></script>
+		<script src="js/uikit-icons.min.js"></script>
 	</head>
 
 	<body>
@@ -192,8 +195,6 @@
 			</div>
 		</footer>
 
-		<script src="js/uikit.min.js"></script>
-		<script src="js/uikit-icons.min.js"></script>
 		<script>			
 			document.querySelectorAll('nav a:not([href^="<?= $lang ?>"])').forEach(a => {
 				a.remove()
