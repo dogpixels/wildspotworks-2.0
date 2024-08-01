@@ -31,7 +31,7 @@
                 <textarea name="message" class="uk-textarea uk-margin uk-width-1-1<?= isset($errors['message'])? ' uk-form-danger' : '' ?>" rows="6" placeholder="Your Message" aria-label="Your Message" <?= $success? 'disabled': '' ?>><?= $input['message'] ?></textarea>
             </div>
         </fieldset>
-        <input type="submit" value="<?= $success? '✅ message delivered': 'Submit' ?>" class="uk-button uk-button-default uk-button-primary" <?= $success? 'disabled': '' ?> />
+        <input type="submit" id="telegram-submit" value="<?= $success? '✅ message delivered': 'Submit' ?>" class="uk-button uk-button-default uk-button-primary" <?= $success? 'disabled': '' ?> />
     </form>
 
     <?php if (!empty($_POST) && $success) { ?>
@@ -42,3 +42,28 @@
         <div class="uk-alert-danger" uk-alert><p>Sorry, an error occurred. Should it persist, please notify me via wildspotworks@gmail.com!</p><p>Error details:</p><pre><?= json_encode(json_decode($response), JSON_PRETTY_PRINT) ?></pre></div>
     <?php } ?>
 </section>
+
+<script>
+    document.getElementById('telegram-submit').addEventListener('click', (event) => {
+        // validate name
+        if (document.querySelector('input[name="name"]').value.length === 0) {
+            UIkit.notification("<span uk-icon='icon: warning'></span> Please enter your name.", {status: 'danger', pos: 'top-right'});
+            event.preventDefault();
+        }
+
+        // validate email || telegram
+        if (
+            document.querySelector('input[name="email"]').value.length === 0 &&
+            document.querySelector('input[name="telegram"]').value.length === 0
+        ) {
+            UIkit.notification("<span uk-icon='icon: warning'></span> Please enter at least one way to contact you, e-mail or telegram.", {status: 'danger', pos: 'top-right'});
+            event.preventDefault();
+        }
+
+        // validate message
+        if (document.querySelector('textarea[name="message"]').value.length < 8) {
+            UIkit.notification("<span uk-icon='warning'></span> Your message seems too short.", {status: 'danger', pos: 'top-right'});
+            event.preventDefault();
+        }
+    })
+</script>
