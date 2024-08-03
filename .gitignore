@@ -1,7 +1,7 @@
 _workfiles/
 _deploy/
 www/modified.json
-www/img/gallery/
+www/img/gallery/*/
 
 # telegram.php contains secrets
 www/telegram.php
