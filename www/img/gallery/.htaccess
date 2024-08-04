@@ -1,7 +1,7 @@
 DirectoryIndex index.php
 RewriteEngine On
 
-# Check if the request is for a file or directory that exists
+# Check if the request is for a file that exists
 # RewriteCond %{REQUEST_FILENAME} !-f
 
 # Rewrite everything else to index.php and pass the path as a query parameter
