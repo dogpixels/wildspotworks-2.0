@@ -1,11 +1,11 @@
 <?php include_once("telegram.php"); ?>
 
-<section>
+<section uk-scrollspy="cls: uk-animation-slide-left-small; target: div; delay: 120">
     <h1>Send Message</h1>
 
-    <p>
-        <strong>Please note:</strong> It make take a while for me to reply, but I will definitely do so. If you haven't received an answer within three days, please try again or contact me via other means, e.g. <a href="https://twitter.com/LunoWroo/" target="_blank">Twitter</a>.
-    </p>
+    <div>
+        <p><strong>Please note:</strong> It make take a while for me to reply, but I will definitely do so. If you haven't received an answer within three days, please try again or contact me via other means, e.g. <a href="https://twitter.com/LunoWroo/" target="_blank">Twitter</a>.</p>
+    </div>
 
     <form action="<?= $this->path ?>" method="POST">
         <fieldset class="uk-fieldset">
@@ -31,7 +31,9 @@
                 <textarea name="message" class="uk-textarea uk-margin uk-width-1-1<?= isset($errors['message'])? ' uk-form-danger' : '' ?>" rows="6" placeholder="Your Message" aria-label="Your Message" <?= $success? 'disabled': '' ?>><?= $input['message'] ?></textarea>
             </div>
         </fieldset>
-        <input type="submit" id="telegram-submit" value="<?= $success? '✅ message delivered': 'Submit' ?>" class="uk-button uk-button-default uk-button-primary" <?= $success? 'disabled': '' ?> />
+        <div>
+            <input type="submit" id="telegram-submit" value="<?= $success? '✅ message delivered': 'Submit' ?>" class="uk-button uk-button-default uk-button-primary" <?= $success? 'disabled': '' ?> />
+        </div>
     </form>
 
     <?php if (!empty($_POST) && $success) { ?>
