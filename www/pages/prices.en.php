@@ -8,7 +8,7 @@
             <div class="uk-margin">
                 <label>
                     <input type="checkbox" id="calc-accept" class="uk-checkbox" />
-                    I have read and accept the <a href="en/terms">Terms of Service</a> and <a href="en/privacy">Privacy Policy</a>.
+                    I have read and accept the <a href="en/terms" target="_blank">Terms of Service</a> and <a href="en/privacy" target="_blank">Privacy Policy</a>.
                 </label>
             </div>
             <div>
