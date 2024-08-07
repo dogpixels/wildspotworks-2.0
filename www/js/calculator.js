@@ -47,7 +47,7 @@ class Calc {
 
             // options grid
             const divGrid = document.createElement('div');
-            divGrid.classList.add('uk-child-width-1-1', 'uk-child-width-1-4@m');
+            divGrid.classList.add('uk-child-width-1-1','uk-child-width-1-2@s', 'uk-child-width-1-4@m');
             divGrid.setAttribute('uk-grid', '');
             section.appendChild(divGrid);
 
