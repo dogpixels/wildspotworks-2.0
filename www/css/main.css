@@ -309,6 +309,12 @@ span.uk-icon-lift {
 .uk-checkbox, .uk-radio {
   border: 1px solid #666;
 }
+.uk-modal-dialog,
+.uk-modal-header,
+.uk-modal-footer,
+.uk-button {
+  border-radius: 6px;
+}
 
 /* js-disabled */
 .js-disabled {
