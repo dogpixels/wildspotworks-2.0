@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div>
-                <textarea name="message" class="uk-textarea uk-margin uk-width-1-1<?= isset($errors['message'])? ' uk-form-danger' : '' ?>" rows="6" placeholder="Your Message" aria-label="Your Message" <?= $success? 'disabled': '' ?>><?= $input['message'] ?></textarea>
+                <textarea name="message" class="uk-textarea uk-margin uk-width-1-1<?= isset($errors['message'])? ' uk-form-danger' : '' ?>" rows="9" placeholder="Your Message" aria-label="Your Message" <?= $success? 'disabled': '' ?>><?= $input['message'] ?></textarea>
             </div>
         </fieldset>
         <div>
