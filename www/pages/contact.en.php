@@ -7,7 +7,7 @@
         <p><strong>Please note:</strong> It make take a while for me to reply, but I will definitely do so. If you haven't received an answer within three days, please try again or contact me via other means, e.g. <a href="https://twitter.com/LunoWroo/" target="_blank">Twitter</a>.</p>
     </div>
 
-    <form action="<?= $this->path ?>" method="POST">
+    <form action="<?= $this->path ?>" method="POST" id="contact-form">
         <fieldset class="uk-fieldset">
             <div>
                 <div class="uk-inline uk-margin uk-width-1-1">
@@ -32,7 +32,7 @@
             </div>
         </fieldset>
         <div>
-            <input type="submit" id="telegram-submit" value="<?= $success? '✅ message delivered': 'Submit' ?>" class="uk-button uk-button-default uk-button-primary" <?= $success? 'disabled': '' ?> />
+            <input type="submit" value="<?= $success? '✅ message delivered': 'Submit' ?>" class="uk-button uk-button-default uk-button-primary" <?= $success? 'disabled': '' ?> />
         </div>
     </form>
 
@@ -46,7 +46,7 @@
 </section>
 
 <script>
-    document.getElementById('telegram-submit').addEventListener('click', (event) => {
+    document.getElementById('contact-form').addEventListener('submit', (event) => {
         // validate name
         if (event.target.querySelector('input[name="name"]').value.length === 0) {
             UIkit.notification("<span uk-icon='icon: warning'></span> Please enter your name.", {status: 'danger', pos: 'top-right'});

@@ -7,7 +7,7 @@
         <p><strong>Hinweis:</strong> Es kann manchmal etwas dauern, bis ich antworte, aber ich antworte auf jeden Fall. Falls du innerhalb von drei Tagen keine Antwort erhalten hast, versuche es auf einem anderen Weg, z.B. über <a href="https://twitter.com/LunoWroo/" target="_blank">Twitter</a>.</p>
     </div>
 
-    <form action="<?= $this->path ?>" method="POST">
+    <form action="<?= $this->path ?>" method="POST" id="contact-form">
         <fieldset class="uk-fieldset">
             <div>
                 <div class="uk-inline uk-margin uk-width-1-1">
@@ -32,7 +32,7 @@
             </div>
         </fieldset>
         <div>
-            <input type="submit" id="telegram-submit" value="<?= $success? '✅ Nachricht zugestellt': 'Absenden' ?>" class="uk-button uk-button-default uk-button-primary" <?= $success? 'disabled': '' ?> />
+            <input type="submit" value="<?= $success? '✅ Nachricht zugestellt': 'Absenden' ?>" class="uk-button uk-button-default uk-button-primary" <?= $success? 'disabled': '' ?> />
         </div>
     </form>
 
@@ -46,7 +46,7 @@
 </section>
 
 <script>
-    document.getElementById('telegram-submit').addEventListener('click', (event) => {
+    document.getElementById('contact-form').addEventListener('submit', (event) => {
         // validate name
         if (event.target.querySelector('input[name="name"]').value.length === 0) {
             UIkit.notification("<span uk-icon='icon: warning'></span> Bitte gib deinen Namen an.", {status: 'danger', pos: 'top-right'});
