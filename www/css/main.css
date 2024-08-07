@@ -216,6 +216,49 @@ footer a.wsw-hide-ext:hover > span.uk-icon-button {
   color: #666;
 }
 
+/* prices */
+#calc-options article {
+  position: relative;
+  min-height: 270px;
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 6px;
+  overflow: hidden;
+}
+#calc-options article:hover {
+  opacity: .9;
+}
+#calc-options article h3, 
+#calc-options article span {
+  position: absolute;
+  background-color: rgba(255, 255, 255, .8);
+  margin: 0;
+  font-size: 12pt;
+}
+#calc-options article h3 {
+  bottom: 0;
+  width: 100%;
+  min-height: 4em;
+  padding: 8px 12px 8px 22px;
+}
+#calc-options article span {
+  top: .5em;
+  right: .5em;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+#calc-options article > span.selected-label {
+  padding: 0;
+  background: none;
+  top: .1em;
+  left: .1em;
+  font-size: 1.5em;
+}
+#calc-options article:not(.selected) > span.selected-label {
+  display: none;
+}
+
 /* gallery */
 #gallery-top-text {
   border-bottom: 3px solid #333;

@@ -1,0 +1,174 @@
+{
+    "baseImgPath" : "img/pages/prices/",
+    "strings": {
+        "message": {
+            "de": "Hallo!\nIch möchte um einen kostenlosen Kostenvoranschlag basierend auf meiner Auswahl bitten: {selection}\nGeschätzter Gesamtwert: {total}€",
+            "en": "Hello!\nI would like to request a free quote based on my choices: {selection}\nEstimated total: {total}€"
+        },
+        "selected": {
+            "de": "✅",
+            "en": "✅"
+        },
+        "terms": {
+            "de": "Hast du die <a href=\"de/terms\" target=\"_blank\">AGB</a> und <a href=\"de/privacy\" target=\"_blank\">Datenschutzerklärung</a> gelesen und akzeptiert?",
+            "en": "Did you read and accept the <a href=\"de/terms\" target=\"_blank\">Terms of Service</a> and <a href=\"de/privacy\" target=\"_blank\">Privacy Policy</a>?"
+        },
+        "emptySelection": {
+            "de": "Sehr witzig. Du hast überhaupt nichts ausgewählt.",
+            "en": "Very funny. You didn't select anything."
+        }
+    },
+    "categories": {
+        "head": {
+            "title": {"de": "3D-gedruckter Kopf", "en": "3D printed Head"},
+            "options": [
+                {
+                    "title": {"de": "Kein", "en": "None"},
+                    "price": 0,
+                    "img": "none.jpg"
+                },
+                {
+                    "title": {"de": "beweglicher Kiefer, Mesh- Augen, Lüftung", "en": "movable jawset, mesh eyes, ventilation"},
+                    "price": 1650,
+                    "img": "head-1.jpg"
+                },
+                {
+                    "title": {"de": "extra Details (Geweihe o.Ä.)", "en": "plus additional features like antlers"},
+                    "price": 1900,
+                    "img": "head-2.jpg"
+                }
+            ]
+        },
+        
+        "body": {
+            "title": {"de": "Körper", "en": "Body"},
+            "options": [
+                {
+                    "title": {"de": "Kein", "en": "None"},
+                    "price": 0,
+                    "img": "none.jpg"
+                },
+                {
+                    "title": {"de": "plantigrade, einfaches Muster", "en": "plantigrade, simple pattern"},
+                    "price": 1550,
+                    "img": "plantibody1.jpg"
+                },
+                {
+                    "title": {"de": "plantigrade, komplexes Muster", "en": "plantigrade, complex pattern"},
+                    "price": 1900,
+                    "img": "plantibody2.jpg"
+                },
+                {
+                    "title": {"de": "plantigrade, extremes Muster", "en": "plantigrade, extreme pattern"},
+                    "price": 2250,
+                    "img": "plantibody3.jpg"
+                },
+
+                {
+                    "title": {"de": "Kein", "en": "None"},
+                    "price": 0,
+                    "img": "none.jpg"
+                },
+                {
+                    "title": {"de": "digitigrade, einfaches Muster", "en": "digitigrade, simple pattern"},
+                    "price": 1700,
+                    "img": "digibody1.jpg"
+                },
+                {
+                    "title": {"de": "digitigrade, komplexes Muster", "en": "digitigrade, complex pattern"},
+                    "price": 2050,
+                    "img": "digibody2.jpg"
+                },
+                {
+                    "title": {"de": "digitigrade, extremes Muster", "en": "digitigrade, extreme pattern"},
+                    "price": 2400,
+                    "img": "digibody3.jpg"
+                },
+                
+                {
+                    "title": {"de": "Kein", "en": "None"},
+                    "price": 0,
+                    "img": "none.jpg"
+                },
+                {
+                    "title": {"de": "komplexe Körperform, einfaches Muster", "en": "complex shape, simple pattern"},
+                    "price": 1800,
+                    "img": "plantipadbody1.jpg"
+                },
+                {
+                    "title": {"de": "komplexe Körperform, komplexes Muster", "en": "complex shape, complex pattern"},
+                    "price": 2250,
+                    "img": "plantipadbody2.jpg"
+                },
+                {
+                    "title": {"de": "komplexe Körperform, extremes Muster", "en": "complex shape, extreme pattern"},
+                    "price": 2700,
+                    "img": "plantipadbody3.jpg"
+                }
+            ]
+        },
+        
+        "paws": {
+            "title": {"de": "Pfoten (Handschuhe)", "en": "Paws (Gloves)"},
+            "options": [
+                {
+                    "title": {"de": "Keine", "en": "None"},
+                    "price": 0,
+                    "img": "none.jpg"
+                },
+                {
+                    "title": {"de": "mit Plastik-Krallen", "en": "plastic claws"},
+                    "price": 350,
+                    "img": "paws-3.jpg"
+                }
+            ]
+        },
+        
+        "feet": {
+            "title": {"de": "Füße (Schuhe) - Größe", "en": "Feet (Shoes) - Size"},
+            "options": [
+                {
+                    "title": {"de": "Keine", "en": "None"},
+                    "price": 0,
+                    "img": "none.jpg"
+                },
+                {
+                    "title": {"de": "Normal", "en": "Normal"},
+                    "price": 450,
+                    "img": "feet-1.jpg"
+                },
+                {
+                    "title": {"de": "übergroße Füße (z.B. Känguru)", "en": "oversize feet (e.g. kangaroos)"},
+                    "price": 550,
+                    "img": "feet-4.jpg"
+                }
+            ]
+        },
+        
+        "tail": {
+            "title": {"de": "Tail", "en": "Tail"},
+            "options": [
+                {
+                    "title": {"de": "Kein", "en": "None"},
+                    "price": 0,
+                    "img": "none.jpg"
+                },
+                {
+                    "title": {"de": "kurz (z.B. Hasen oder Hirsch)", "en": "short (e.g. rabbit or deer)"},
+                    "price": 60,
+                    "img": "tail-1.jpg"
+                },
+                {
+                    "title": {"de": "mittel (z.B. Hunde)", "en": "medium (e.g. canines)"},
+                    "price": 120,
+                    "img": "tail-2.jpg"
+                },
+                {
+                    "title": {"de": "{lang (z.B. Känguru)", "en": "long (e.g. kangaroos)"},
+                    "price": 450,
+                    "img": "tail-3.jpg"
+                }
+            ]
+        }
+    }
+}
