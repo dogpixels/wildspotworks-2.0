@@ -37,7 +37,7 @@
     }
 </script>
 
-<script src="js/price-calculator.js"></script>
+<script src="js/calculator.min.js"></script>
 <script>
     const calc = new Calc(document.getElementById('calc-options'), document.getElementById('calc-total'));
     calc.build('prices.json');
