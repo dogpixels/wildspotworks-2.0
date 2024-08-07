@@ -143,7 +143,7 @@
 		</header>
 
 		<main>
-			<div id="content" uk-scrollspy="cls: uk-animation-slide-bottom-small; target: > section; delay: 250">
+			<div id="content" uk-scrollspy="cls: uk-animation-slide-bottom-small; target: section; delay: 250">
 				<?= $core->get_content() ?>
 			</div>
 		</main>

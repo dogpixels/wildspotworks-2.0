@@ -1,4 +1,4 @@
-<div id="calc-options"></div>
+<div id="calc-options" uk-scrollspy="cls: uk-animation-slide-bottom-small; target: article; delay: 150"></div>
 
 <section>
     <h2>Total: <span id="calc-total">0</span>&euro;</h2>
