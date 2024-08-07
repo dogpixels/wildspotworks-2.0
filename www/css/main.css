@@ -189,6 +189,8 @@ footer:before {
   width: 100%;
   height: var(--footer-hedge-height);
   background-image: url(../img/fleck2_r.png);
+  /* disable until polishing */
+  display: none;
 }
 footer .uk-button-group {
   display: inline-flex;
@@ -303,6 +305,9 @@ span.uk-icon-lift {
 }
 [class*="uk-column-"] > * {
   break-inside: avoid-column;
+}
+.uk-checkbox, .uk-radio {
+  border: 1px solid #666;
 }
 
 /* js-disabled */
