@@ -10,23 +10,26 @@ class Calc {
         this.targetContainer = targetContainer;
         this.totalContainer = totalContainer;
         this.lang = document.documentElement.lang;
-        document.getElementById('calc-submit').addEventListener('click', (event) => {
-            const accept = document.getElementById('calc-accept');
-            if (this.getTotal() === 0) {
-                UIkit.modal.alert(this.data.strings.emptySelection[this.lang], {i18n: {ok: '🤣'}});
-                event.preventDefault();
-                return;
-            };
-            if (!accept.checked) {
-                accept.style.border = "1px solid red";
-                UIkit.modal.alert(this.data.strings.terms[this.lang]);
-                event.preventDefault();
-                return;
-            };
+        document.getElementById('calc-form').addEventListener('submit', async (event) => {
             let msg = this.data.strings.message[this.lang];
             msg = msg.replace('{selection}', this.getSelectionText());
             msg = msg.replace('{total}', this.getTotal());
-            document.querySelector('main form input[name="message"]').value = msg;            
+            document.querySelector('main form input[name="message"]').value = msg;
+
+            // check for empty selections
+            if (this.getTotal() === 0) {
+                event.preventDefault();
+                emptySelection();
+                return;
+            };
+            
+            // check for tos acceptance 
+            if (!document.getElementById('calc-accept').checked) {
+                event.preventDefault();
+                if (await confirmTerms()) {
+                    event.target.submit();
+                }
+            };          
         })
     }
 
@@ -89,8 +92,6 @@ class Calc {
                 divGrid.appendChild(div);
             });
 
-
-            // 
             this.targetContainer.appendChild(section);
         };
     }

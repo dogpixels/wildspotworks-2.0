@@ -2,20 +2,12 @@
     "baseImgPath" : "img/pages/prices/",
     "strings": {
         "message": {
-            "de": "Hallo!\nIch möchte um einen kostenlosen Kostenvoranschlag basierend auf meiner Auswahl bitten: {selection}\nGeschätzter Gesamtwert: {total}€",
-            "en": "Hello!\nI would like to request a free quote based on my choices: {selection}\nEstimated total: {total}€"
+            "de": "Hallo,\nIch möchte um einen kostenlosen Kostenvoranschlag basierend auf meiner Auswahl bitten: {selection}\nGeschätzter Gesamtwert: {total}€\nDie AGB und Datenschutzerklärung habe ich gelesen und akzeptiert.",
+            "en": "Hello,\nI would like to request a free quote based on my choices: {selection}\nEstimated total: {total}€\nI have read and accept the Terms of Service and Privacy Policy."
         },
         "selected": {
             "de": "✅",
             "en": "✅"
-        },
-        "terms": {
-            "de": "Hast du die <a href=\"de/terms\" target=\"_blank\">AGB</a> und <a href=\"de/privacy\" target=\"_blank\">Datenschutzerklärung</a> gelesen und akzeptiert?",
-            "en": "Did you read and accept the <a href=\"de/terms\" target=\"_blank\">Terms of Service</a> and <a href=\"de/privacy\" target=\"_blank\">Privacy Policy</a>?"
-        },
-        "emptySelection": {
-            "de": "Sehr witzig. Du hast überhaupt nichts ausgewählt.",
-            "en": "Very funny. You didn't select anything."
         }
     },
     "categories": {
