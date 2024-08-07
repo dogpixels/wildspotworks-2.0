@@ -2,8 +2,8 @@
     "baseImgPath" : "img/pages/prices/",
     "strings": {
         "message": {
-            "de": "Hallo,\nIch möchte um einen kostenlosen Kostenvoranschlag basierend auf meiner Auswahl bitten: {selection}\nGeschätzter Gesamtwert: {total}€\nDie AGB und Datenschutzerklärung habe ich gelesen und akzeptiert.",
-            "en": "Hello,\nI would like to request a free quote based on my choices: {selection}\nEstimated total: {total}€\nI have read and accept the Terms of Service and Privacy Policy."
+            "de": "Hallo,\nIch möchte um einen kostenlosen Kostenvoranschlag basierend auf meiner Auswahl bitten: {selection}\nGeschätzter Gesamtwert: ~{total}€\nDie AGB und Datenschutzerklärung habe ich gelesen und akzeptiert.",
+            "en": "Hello,\nI would like to request a free quote based on my choices: {selection}\nEstimated total: ~{total}€\nI have read and accept the Terms of Service and Privacy Policy."
         },
         "selected": {
             "de": "✅",
