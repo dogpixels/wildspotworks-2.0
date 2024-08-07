@@ -48,22 +48,22 @@
 <script>
     document.getElementById('telegram-submit').addEventListener('click', (event) => {
         // validate name
-        if (document.querySelector('input[name="name"]').value.length === 0) {
+        if (event.target.querySelector('input[name="name"]').value.length === 0) {
             UIkit.notification("<span uk-icon='icon: warning'></span> Please enter your name.", {status: 'danger', pos: 'top-right'});
             event.preventDefault();
         }
 
         // validate email || telegram
         if (
-            document.querySelector('input[name="email"]').value.length === 0 &&
-            document.querySelector('input[name="telegram"]').value.length === 0
+            event.target.querySelector('input[name="email"]').value.length === 0 &&
+            event.target.querySelector('input[name="telegram"]').value.length === 0
         ) {
             UIkit.notification("<span uk-icon='icon: warning'></span> Please enter at least one way to contact you, e-mail or telegram.", {status: 'danger', pos: 'top-right'});
             event.preventDefault();
         }
 
         // validate message
-        if (document.querySelector('textarea[name="message"]').value.length < 8) {
+        if (event.target.querySelector('textarea[name="message"]').value.length < 8) {
             UIkit.notification("<span uk-icon='warning'></span> Your message seems too short.", {status: 'danger', pos: 'top-right'});
             event.preventDefault();
         }

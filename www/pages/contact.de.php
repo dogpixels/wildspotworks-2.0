@@ -48,22 +48,22 @@
 <script>
     document.getElementById('telegram-submit').addEventListener('click', (event) => {
         // validate name
-        if (document.querySelector('input[name="name"]').value.length === 0) {
+        if (event.target.querySelector('input[name="name"]').value.length === 0) {
             UIkit.notification("<span uk-icon='icon: warning'></span> Bitte gib deinen Namen an.", {status: 'danger', pos: 'top-right'});
             event.preventDefault();
         }
 
         // validate email || telegram
         if (
-            document.querySelector('input[name="email"]').value.length === 0 &&
-            document.querySelector('input[name="telegram"]').value.length === 0
+            event.target.querySelector('input[name="email"]').value.length === 0 &&
+            event.target.querySelector('input[name="telegram"]').value.length === 0
         ) {
             UIkit.notification("<span uk-icon='icon: warning'></span> Bitte gib eine Kontaktmöglichkeit an, zumindest E-Mail oder Telegram.", {status: 'danger', pos: 'top-right'});
             event.preventDefault();
         }
 
         // validate message
-        if (document.querySelector('textarea[name="message"]').value.length < 8) {
+        if (event.target.querySelector('textarea[name="message"]').value.length < 8) {
             UIkit.notification("<span uk-icon='warning'></span> Deine Nachricht ist etwas zu kurz.", {status: 'danger', pos: 'top-right'});
             event.preventDefault();
         }
