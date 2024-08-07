@@ -10,21 +10,23 @@
     <form action="<?= $this->path ?>" method="POST" id="contact-form">
         <fieldset class="uk-fieldset">
             <div>
-                <div class="uk-inline uk-margin uk-width-1-1">
+                <div class="uk-inline uk-width-1-1">
                     <span class="uk-form-icon" uk-icon="user"></span>
                     <input type="text" name="name" value="<?= $input['name'] ?>" placeholder="Dein Name" class="uk-input" aria-label="Dein Name" <?= $success? 'disabled': '' ?> />
                 </div>
             </div>
-            <div>
-                <div class="uk-inline uk-margin uk-width-1-1">
-                    <span class="uk-form-icon" uk-icon="mail"></span>
-                    <input type="email" name="email" value="<?= $input['email'] ?>" placeholder="Deine E-Mail-Adresse" class="uk-input" aria-label="Deine E-Mail-Adresse" <?= $success? 'disabled': '' ?> />
+            <div class="uk-child-width-1-2@m uk-margin" uk-grid>
+                <div>
+                    <div class="uk-inline uk-width-1-1">
+                        <span class="uk-form-icon" uk-icon="mail"></span>
+                        <input type="email" name="email" value="<?= $input['email'] ?>" placeholder="Deine E-Mail-Adresse" class="uk-input" aria-label="Deine E-Mail-Adresse" <?= $success? 'disabled': '' ?> />
+                    </div>
                 </div>
-            </div>
-            <div>
-                <div class="uk-inline uk-margin uk-width-1-1">
-                    <span class="uk-form-icon" uk-icon="telegram"></span>
-                    <input type="text" name="telegram" value="<?= $input['telegram'] ?>" placeholder="Dein Telegram" class="uk-input" aria-label="Dein Telegram-Handle" <?= $success? 'disabled': '' ?> />
+                <div>
+                    <div class="uk-inline uk-width-1-1">
+                        <span class="uk-form-icon" uk-icon="telegram"></span>
+                        <input type="text" name="telegram" value="<?= $input['telegram'] ?>" placeholder="Dein Telegram" class="uk-input" aria-label="Dein Telegram-Handle" <?= $success? 'disabled': '' ?> />
+                    </div>
                 </div>
             </div>
             <div>

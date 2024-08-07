@@ -10,21 +10,23 @@
     <form action="<?= $this->path ?>" method="POST" id="contact-form">
         <fieldset class="uk-fieldset">
             <div>
-                <div class="uk-inline uk-margin uk-width-1-1">
+                <div class="uk-inline uk-width-1-1">
                     <span class="uk-form-icon" uk-icon="user"></span>
                     <input type="text" name="name" value="<?= $input['name'] ?>" placeholder="Your Name" class="uk-input" aria-label="Your Name" <?= $success? 'disabled': '' ?> />
                 </div>
             </div>
-            <div>
-                <div class="uk-inline uk-margin uk-width-1-1">
-                    <span class="uk-form-icon" uk-icon="mail"></span>
-                    <input type="email" name="email" value="<?= $input['email'] ?>" placeholder="E-Mail" class="uk-input" aria-label="Your E-Mail" <?= $success? 'disabled': '' ?> />
+            <div class="uk-child-width-1-2@m uk-margin" uk-grid>
+                <div>
+                    <div class="uk-inline uk-width-1-1">
+                        <span class="uk-form-icon" uk-icon="mail"></span>
+                        <input type="email" name="email" value="<?= $input['email'] ?>" placeholder="E-Mail" class="uk-input" aria-label="Your E-Mail" <?= $success? 'disabled': '' ?> />
+                    </div>
                 </div>
-            </div>
-            <div>
-                <div class="uk-inline uk-margin uk-width-1-1">
-                    <span class="uk-form-icon" uk-icon="telegram"></span>
-                    <input type="text" name="telegram" value="<?= $input['telegram'] ?>" placeholder="Telegram" class="uk-input" aria-label="Your Telegram Handle" <?= $success? 'disabled': '' ?> />
+                <div>
+                    <div class="uk-inline uk-width-1-1">
+                        <span class="uk-form-icon" uk-icon="telegram"></span>
+                        <input type="text" name="telegram" value="<?= $input['telegram'] ?>" placeholder="Telegram" class="uk-input" aria-label="Your Telegram Handle" <?= $success? 'disabled': '' ?> />
+                    </div>
                 </div>
             </div>
             <div>
