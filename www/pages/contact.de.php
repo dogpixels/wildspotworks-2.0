@@ -12,23 +12,23 @@
             <div>
                 <div class="uk-inline uk-margin uk-width-1-1">
                     <span class="uk-form-icon" uk-icon="user"></span>
-                    <input type="text" name="name" value="<?= $input['name'] ?>" placeholder="Dein Name" class="uk-input<?= isset($errors['name'])? ' uk-form-danger' : '' ?>" aria-label="Dein Name" <?= $success? 'disabled': '' ?> />
+                    <input type="text" name="name" value="<?= $input['name'] ?>" placeholder="Dein Name" class="uk-input" aria-label="Dein Name" <?= $success? 'disabled': '' ?> />
                 </div>
             </div>
             <div>
                 <div class="uk-inline uk-margin uk-width-1-1">
                     <span class="uk-form-icon" uk-icon="mail"></span>
-                    <input type="email" name="email" value="<?= $input['email'] ?>" placeholder="Deine E-Mail-Adresse" class="uk-input<?= isset($errors['contact'])? ' uk-form-danger' : '' ?>" aria-label="Deine E-Mail-Adresse" <?= $success? 'disabled': '' ?> />
+                    <input type="email" name="email" value="<?= $input['email'] ?>" placeholder="Deine E-Mail-Adresse" class="uk-input" aria-label="Deine E-Mail-Adresse" <?= $success? 'disabled': '' ?> />
                 </div>
             </div>
             <div>
                 <div class="uk-inline uk-margin uk-width-1-1">
                     <span class="uk-form-icon" uk-icon="telegram"></span>
-                    <input type="text" name="telegram" value="<?= $input['telegram'] ?>" placeholder="Dein Telegram" class="uk-input<?= isset($errors['contact'])? ' uk-form-danger' : '' ?>" aria-label="Dein Telegram-Handle" <?= $success? 'disabled': '' ?> />
+                    <input type="text" name="telegram" value="<?= $input['telegram'] ?>" placeholder="Dein Telegram" class="uk-input" aria-label="Dein Telegram-Handle" <?= $success? 'disabled': '' ?> />
                 </div>
             </div>
             <div>
-                <textarea name="message" class="uk-textarea uk-margin uk-width-1-1<?= isset($errors['message'])? ' uk-form-danger' : '' ?>" rows="9" placeholder="Deine Nachricht" aria-label="Deine Nachricht" <?= $success? 'disabled': '' ?>><?= $input['message'] ?></textarea>
+                <textarea name="message" class="uk-textarea uk-margin uk-width-1-1" rows="9" placeholder="Deine Nachricht" aria-label="Deine Nachricht" <?= $success? 'disabled': '' ?>><?= $input['message'] ?></textarea>
             </div>
         </fieldset>
         <div>
