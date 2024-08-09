@@ -4,7 +4,7 @@
     <h1>Send Message</h1>
 
     <div>
-        <p><strong>Please note:</strong> It make take a while for me to reply, but I will definitely do so. If you haven't received an answer within three days, please try again or contact me via other means, e.g. <a href="https://twitter.com/LunoWroo/" target="_blank">Twitter</a>.</p>
+        <p><strong>Note:</strong> Please provide at least one way to reach you back, either eMail and/or Telegram.<br />It make take a while for me to reply, but I will definitely do so. If you haven't received an answer within three days, please try again or contact me via other means, e.g. <a href="https://twitter.com/LunoWroo/" target="_blank">Twitter</a>.</p>
     </div>
 
     <form action="<?= $this->path ?>" method="POST" id="contact-form">

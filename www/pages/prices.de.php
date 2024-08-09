@@ -1,3 +1,7 @@
+<section>
+    <p>Wähle die Optionen aus, die deinen gewünschten Fursuit am ehesten beschreiben. Der Preiskalkulator gibt dir unten einen geschätzten Gesamtpreis aus. Damit kannst anschließend ein unverbindliches Angebot anfordern.</p>
+</section>
+
 <div id="calc-options" uk-scrollspy="cls: uk-animation-slide-bottom-small; target: article; delay: 150"></div>
 
 <section>

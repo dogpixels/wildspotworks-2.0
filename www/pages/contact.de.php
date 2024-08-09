@@ -4,7 +4,7 @@
     <h1>Nachricht Schreiben</h1>
 
     <div>
-        <p><strong>Hinweis:</strong> Es kann manchmal etwas dauern, bis ich antworte, aber ich antworte auf jeden Fall. Falls du innerhalb von drei Tagen keine Antwort erhalten hast, versuche es auf einem anderen Weg, z.B. über <a href="https://twitter.com/LunoWroo/" target="_blank">Twitter</a>.</p>
+        <p><strong>Hinweis:</strong> Bitte gib mindestens eine Methode an, wie ich dich erreichen kann, per E-Mail und/oder Telegram.<br />Es kann manchmal etwas dauern, bis ich antworte, aber ich antworte auf jeden Fall. Falls du innerhalb von drei Tagen keine Antwort erhalten hast, versuche es auf einem anderen Weg, z.B. über <a href="https://twitter.com/LunoWroo/" target="_blank">Twitter</a>.</p>
     </div>
 
     <form action="<?= $this->path ?>" method="POST" id="contact-form">
