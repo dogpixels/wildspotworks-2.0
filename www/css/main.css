@@ -288,6 +288,7 @@ footer a.wsw-hide-ext:hover > span.uk-icon-button {
   justify-content: center;
   min-width: 350px;
   min-height: 200px;
+  border-radius: 6px;
   cursor: pointer;
   text-align: center;
 }
@@ -312,6 +313,8 @@ span.uk-icon-lift {
 .uk-modal-dialog,
 .uk-modal-header,
 .uk-modal-footer,
+.uk-input,
+.uk-textarea,
 .uk-button {
   border-radius: 6px;
 }
