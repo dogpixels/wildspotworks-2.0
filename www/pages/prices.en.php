@@ -1,5 +1,6 @@
 <section>
-    <p>Choose the options that best describe your desired fursuit, and the price calculator will provide an estimate at the bottom of this page. You can then request a non-obligatory quote.</p>
+    <h1>Price Calculator</h1>
+    <p>This tool allows you to estimate the price for your individual fursuit. You will receive an estimated total at the bottom of this page, along with the option to request a non-obligatory quote based on your selected options.</p>
 </section>
 
 <div id="calc-options" uk-scrollspy="cls: uk-animation-slide-bottom-small; target: article; delay: 150"></div>
