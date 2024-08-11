@@ -1,5 +1,8 @@
 class Calc {
     constructor(targetContainer, totalContainer) {
+        this.config = {
+            lazyLoading: true
+        }
         this.targetContainer = targetContainer;
         this.totalContainer = totalContainer;
         this.lang = document.documentElement.lang;
@@ -47,7 +50,13 @@ class Calc {
             // article (option incl. title, image, price)
             cat.options.forEach(option => {
                 const article = document.createElement('article');
-                article.style.backgroundImage = `url('${this.data.baseImgPath}${option.img}')`;
+                if (this.config.lazyLoading) {
+                    article.setAttribute('uk-img', '');
+                    article.setAttribute('data-src', `${this.data.baseImgPath}${option.img}`)
+                }
+                else {
+                    article.style.backgroundImage = `url('${this.data.baseImgPath}${option.img}')`;
+                }
                 article.addEventListener('click', (event) => {
                     this.selection[catId] = option;
 
