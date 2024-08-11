@@ -1,19 +1,25 @@
 class Calc {
+    #config = {
+        lazyLoading: true
+    }
+    #targetContainer = null;
+    #totalContainer = null;
+    #lang = 'en';
+    #data = null;
+    #selection = {}
+
     constructor(targetContainer, totalContainer) {
-        this.config = {
-            lazyLoading: true
-        }
-        this.targetContainer = targetContainer;
-        this.totalContainer = totalContainer;
-        this.lang = document.documentElement.lang;
+        this.#targetContainer = targetContainer;
+        this.#totalContainer = totalContainer;
+        this.#lang = document.documentElement.lang;
         document.getElementById('calc-form').addEventListener('submit', async (event) => {
-            let msg = this.data.strings.message[this.lang];
-            msg = msg.replace('{selection}', this.getSelectionText());
-            msg = msg.replace('{total}', this.getTotal());
+            let msg = this.#data.strings.message[this.#lang];
+            msg = msg.replace('{selection}', this.#getSelectionText());
+            msg = msg.replace('{total}', this.#getTotal());
             document.querySelector('main form input[name="message"]').value = msg;
 
             // check for empty selections
-            if (this.getTotal() === 0) {
+            if (this.#getTotal() === 0) {
                 event.preventDefault();
                 emptySelection();
                 return;
@@ -30,15 +36,15 @@ class Calc {
     }
 
     async build(dataFile) {
-        this.data = await this.fetch(dataFile);
+        this.#data = await this.#fetch(dataFile);
 
-        for (const catId in this.data.categories) {
-            const cat = this.data.categories[catId];
+        for (const catId in this.#data.categories) {
+            const cat = this.#data.categories[catId];
             const section = document.createElement('section');
 
             // title
             const h2 = document.createElement('h2');
-            h2.innerText = cat.title[this.lang];
+            h2.innerText = cat.title[this.#lang];
             section.appendChild(h2);
 
             // options grid
@@ -50,18 +56,18 @@ class Calc {
             // article (option incl. title, image, price)
             cat.options.forEach(option => {
                 const article = document.createElement('article');
-                if (this.config.lazyLoading) {
+                if (this.#config.lazyLoading) {
                     article.setAttribute('uk-img', '');
-                    article.setAttribute('data-src', `${this.data.baseImgPath}${option.img}`)
+                    article.setAttribute('data-src', `${this.#data.baseImgPath}${option.img}`)
                 }
                 else {
-                    article.style.backgroundImage = `url('${this.data.baseImgPath}${option.img}')`;
+                    article.style.backgroundImage = `url('${this.#data.baseImgPath}${option.img}')`;
                 }
                 article.addEventListener('click', (event) => {
-                    this.selection[catId] = option;
+                    this.#selection[catId] = option;
 
                     // update total
-                    this.totalContainer.innerText = this.getTotal();
+                    this.#totalContainer.innerText = this.#getTotal();
 
                     // remove .selected from all other articles in this section
                     Array.from(section.querySelectorAll('article')).forEach((a) => {
@@ -74,7 +80,7 @@ class Calc {
 
                 // option title
                 const h3 = document.createElement('h3');
-                h3.innerText = option.title[this.lang];
+                h3.innerText = option.title[this.#lang];
                 article.appendChild(h3);
 
                 // option price
@@ -84,7 +90,7 @@ class Calc {
 
                 // option selected label  
                 const spanSelected = document.createElement('span');
-                spanSelected.innerHTML = this.data.strings.selected[this.lang];
+                spanSelected.innerHTML = this.#data.strings.selected[this.#lang];
                 spanSelected.classList.add('selected-label');
                 article.appendChild(spanSelected);
 
@@ -94,30 +100,30 @@ class Calc {
                 divGrid.appendChild(div);
             });
 
-            this.targetContainer.appendChild(section);
+            this.#targetContainer.appendChild(section);
         };
     }
 
-    getTotal() {
+    #getTotal() {
         let total = 0;
-        for (let optId in this.selection) {
-            const option = this.selection[optId];
+        for (let optId in this.#selection) {
+            const option = this.#selection[optId];
             total += option.price;
         }
         return total;
     }
 
-    getSelectionText() {
+    #getSelectionText() {
         let selection = "";
-        for (let optId in this.selection) {
-            const option = this.selection[optId];
+        for (let optId in this.#selection) {
+            const option = this.#selection[optId];
             if (option.price !== 0)
-                selection += `\n- ${this.data.categories[optId].title[this.lang]}: ${option.title[this.lang]} (${option.price}€)`;
+                selection += `\n- ${this.#data.categories[optId].title[this.#lang]}: ${option.title[this.#lang]} (${option.price}€)`;
         }
         return selection;
     }
 
-    async fetch(url) {
+    async #fetch(url) {
         url += `?${Date.now()}`;
         var data = null;
         try {
