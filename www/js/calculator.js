@@ -1,11 +1,4 @@
 class Calc {
-    data = {};
-    selection = {};
-    lang = 'en';
-
-    targetContainer = null;
-    totalContainer = null;
-
     constructor(targetContainer, totalContainer) {
         this.targetContainer = targetContainer;
         this.totalContainer = totalContainer;
