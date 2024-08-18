@@ -152,13 +152,11 @@ nav a {
   width: 100%;
   height: calc(var(--header-height) - 10px);
   padding: 8px 0;
-  border-radius: 15px;
   text-align: center;
   font-size: 1.3em;
 }
 nav a:hover {
   top: -2px;
-  border-radius: 15px;
 }
 nav a:active {
   top: 4px;
