@@ -346,19 +346,6 @@
             "robots": "noindex, nofollow, noodp",
             "title": "Welcome",
             "uri": "home.en.php"
-        },
-
-        "en/gallery/tomxo": {
-            "accessible": true,
-            "category": "gallery",
-            "description": "",
-            "inMenu": false,
-            "keywords": "",
-            "menuText": "",
-            "ogpImage": "",
-            "robots": "",
-            "title": "",
-            "uri": "gallery.tomxo.en.php"
         }
     }
 }
