@@ -1,30 +1,33 @@
 class Gallery {
     #data = undefined;
+    #lang = 'en';
     #modal = undefined;
     #modalTitle = undefined;
     #modalBody = undefined;
 
     constructor() {
-        this.#data = this.#fetch('gallery.json');
+        this.#lang = document.documentElement.lang;
         this.#modal = document.getElementById('gallery-modal');
         this.#modalTitle = document.getElementById('gallery-modal-title');
-        this.#modalBody = document.getElementById('gallery-modal-content');
+        this.#modalBody = document.getElementById('gallery-modal-body');
     }
 
-    async build() {
+    async build(dataFile) {
+        this.#data = await this.#fetch(dataFile);
         for (const [id, fursuit] of Object.entries(this.#data)) {
+            console.log(id);
             let div = document.createElement('div');
             div.setAttribute('id', id);
             div.classList.add('entry');
             document.getElementById('gallery-list').appendChild(div);
 
             const img = document.createElement('img');
-            img.src = `${fursuit.images}/${fursuit.thumb}`;
+            img.src = `${fursuit.directory}/${fursuit.thumb}`;
             img.alt = fursuit.thumb;
             div.appendChild(img);
 
             const h3 = document.createElement('h3');
-            h3.innerText = fursuit.title;
+            h3.innerText = fursuit.title[this.#lang];
             div.appendChild(h3);
 
             // add event handler
@@ -38,14 +41,14 @@ class Gallery {
 
         const fursuit = this.#data[id];
 
-        this.#modalBody.innerHTML = '';
-        this.#modalTitle.innerText = fursuit.title;
+        this.#modalBody.innerHTML = fursuit.description[this.#lang];
+        this.#modalTitle.innerText = fursuit.title[this.#lang];
 
-        const files = await (await fetch(fursuit.images)).json();
+        const files = await this.#fetch(`img/gallery/${fursuit.directory}`);
 
         files.forEach(file => {
             const img = document.createElement('img');
-            img.src = `${fursuit.images}/${file}`;
+            img.src = `${fursuit.directory}/${file}`;
             this.#modalBody.appendChild(img);
         });
 
@@ -72,4 +75,4 @@ class Gallery {
 }
 
 gallery = new Gallery();
-gallery.build();
+gallery.build('gallery.json');
