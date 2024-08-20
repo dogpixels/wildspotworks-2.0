@@ -8,4 +8,13 @@
     <h5><b>Click the Images for more pictures :)</b></h5>
     <div id="gallery-list"></div>
 </section>
+
+<div id="gallery-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 id="gallery-modal-title" class="uk-modal-title"></h2>
+        <div id="gallery-modal-content"></div>
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+    </div>
+</div>
+
 <script src="../js/gallery.js"></script>

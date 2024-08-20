@@ -1,28 +1,75 @@
-async function getData() {
-  try {
-    const response = await fetch(`js/gallery-data.json`);
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
+class Gallery {
+    #data = undefined;
+    #modal = undefined;
+    #modalTitle = undefined;
+    #modalBody = undefined;
+
+    constructor() {
+        this.#data = this.#fetch('gallery.json');
+        this.#modal = document.getElementById('gallery-modal');
+        this.#modalTitle = document.getElementById('gallery-modal-title');
+        this.#modalBody = document.getElementById('gallery-modal-content');
     }
-    const jsonData = await response.json();
-    for (
-      let gallery_item = 0;
-      gallery_item < jsonData.contents.length;
-      gallery_item++
-    ) {
-      let entry = document.createElement("gallery-entry");
-      entry.setAttribute("id", `e${gallery_item}`);
-      entry.setAttribute("class", `entry`);
-      document.getElementById("gallery-list").appendChild(entry);
-      let button = document.createElement("button");
-      button.setAttribute("id", `b${gallery_item}`);
-      button.setAttribute("class", `entry-button`);
-      entry.appendChild(button);
-      document.getElementById(`b${gallery_item}`).innerText =
-        jsonData.contents[gallery_item].title;
+
+    async build() {
+        for (const [id, fursuit] of Object.entries(this.#data)) {
+            let div = document.createElement('div');
+            div.setAttribute('id', id);
+            div.classList.add('entry');
+            document.getElementById('gallery-list').appendChild(div);
+
+            const img = document.createElement('img');
+            img.src = `${fursuit.images}/${fursuit.thumb}`;
+            img.alt = fursuit.thumb;
+            div.appendChild(img);
+
+            const h3 = document.createElement('h3');
+            h3.innerText = fursuit.title;
+            div.appendChild(h3);
+
+            // add event handler
+            div.addEventListener('click', () => { this.#openModal(id) });
+        }
     }
-  } catch (error) {
-    console.error(error.message);
-  }
+
+    async #openModal(id) {
+        if (!(id in this.#data))
+            return;
+
+        const fursuit = this.#data[id];
+
+        this.#modalBody.innerHTML = '';
+        this.#modalTitle.innerText = fursuit.title;
+
+        const files = await (await fetch(fursuit.images)).json();
+
+        files.forEach(file => {
+            const img = document.createElement('img');
+            img.src = `${fursuit.images}/${file}`;
+            this.#modalBody.appendChild(img);
+        });
+
+        window.location.hash = id;
+        UIkit.modal(this.#modal).show();
+    }
+
+    async #fetch(url) {
+        // url += `?${Date.now()}`;
+        var data = null;
+        try {
+            data = await (await fetch(url)).json();
+            if (!data) {
+                console.error("[gallery] malformed data loaded:", data);
+                throw "malformed data";
+            }
+        }
+        catch(ex) {
+            console.error(`[gallery] failed to load ${url}, reason: ${ex}`);
+            return;
+        }
+        return data;
+    }
 }
-getData();
+
+gallery = new Gallery();
+gallery.build();
