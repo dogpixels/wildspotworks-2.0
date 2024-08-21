@@ -216,7 +216,7 @@
         }
     },
     "LunoWroo": {
-        "title": {"de": "Luno the Kangaroo", "en": "Luno das Känguru"},
+        "title": {"de": "Luno das Känguru", "en": "Luno the Kangaroo"},
         "directory": "lunowroo",
         "thumb": "thumbs/lunothumb.jpg",
         "description": {
