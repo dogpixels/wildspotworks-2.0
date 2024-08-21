@@ -239,6 +239,7 @@ article {
   position: relative;
   min-height: 270px;
   background-size: cover;
+  background-position: center;
   cursor: pointer;
   border-radius: 6px;
   overflow: hidden;
