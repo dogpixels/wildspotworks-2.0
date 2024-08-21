@@ -1,5 +1,5 @@
 <section>
-    <h1>Vergangene Fursuit Projekte<h1>
+    <h1>Vergangene Fursuit Projekte</h1>
     <p>Die Folgende Gallerie zeigt Bilder von Fursuits die ich bereits gebaut habe. Es ist zu beachten, dass hier auch body-only Kommissionen auftauchen, sprich nicht alle suits komplett von mir gefertigt wurden. Nähere Informationen stehen auf der jeweiligen Fursuit- Unterseite.<p>
     <p>An dieser Stelle möchte ich auch allen Suiteigentümern und ihren Fotografen dafür meinen Dank aussprechen, dass sie mir diese Bilder hier zur Verfügung gestellt haben.<p>
     <p><strong>Einfach auf die Bilder klicken :)</strong></p>
