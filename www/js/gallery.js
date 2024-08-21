@@ -1,12 +1,17 @@
 class Gallery {
-    #data = undefined;
+    #config = {
+        lazyLoading: true
+    }
     #lang = 'en';
+    #data = undefined;
     #modal = undefined;
     #modalTitle = undefined;
     #modalBody = undefined;
+    #galleryGrid = undefined;
 
     constructor() {
         this.#lang = document.documentElement.lang;
+        this.#galleryGrid = document.getElementById('gallery');
         this.#modal = document.getElementById('gallery-modal');
         this.#modalTitle = document.getElementById('gallery-modal-title');
         this.#modalBody = document.getElementById('gallery-modal-body');
@@ -15,23 +20,25 @@ class Gallery {
     async build(dataFile) {
         this.#data = await this.#fetch(dataFile);
         for (const [id, fursuit] of Object.entries(this.#data)) {
-            console.log(id);
-            let div = document.createElement('div');
+            const div = document.createElement('div');
             div.setAttribute('id', id);
             div.classList.add('entry');
-            document.getElementById('gallery-list').appendChild(div);
+            this.#galleryGrid.appendChild(div);
 
-            const img = document.createElement('img');
-            img.src = `${fursuit.directory}/${fursuit.thumb}`;
-            img.alt = fursuit.thumb;
-            div.appendChild(img);
+            const article = document.createElement('article');
+            if (this.#config.lazyLoading) {
+                article.setAttribute('uk-img', '');
+                article.setAttribute('data-src', `img/gallery/${fursuit.thumb}`)
+            }
+            else {
+                article.style.backgroundImage = `url('img/gallery/${fursuit.thumb}')`;
+            }
+            article.addEventListener('click', () => { this.#openModal(id) });
+            div.appendChild(article);
 
             const h3 = document.createElement('h3');
             h3.innerText = fursuit.title[this.#lang];
-            div.appendChild(h3);
-
-            // add event handler
-            div.addEventListener('click', () => { this.#openModal(id) });
+            article.appendChild(h3);
         }
     }
 

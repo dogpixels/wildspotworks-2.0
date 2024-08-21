@@ -6,7 +6,7 @@
     <h5>Further I really want to express my gratitude to the suit owners and their photographers of course, for providing me most of those beautiful pictures here!<h5></div>
 
     <h5><b>Click the Images for more pictures :)</b></h5>
-    <div id="gallery-list"></div>
+    <div id="gallery" class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid></div>
 </section>
 
 <div id="gallery-modal" uk-modal>
