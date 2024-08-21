@@ -7,7 +7,8 @@ class Gallery {
     #data = undefined;
     #modal = undefined;
     #modalTitle = undefined;
-    #modalBody = undefined;
+    #modalText = undefined;
+    #modalImages = undefined;
     #galleryGrid = undefined;
 
     constructor() {
@@ -15,7 +16,8 @@ class Gallery {
         this.#galleryGrid = document.getElementById('gallery');
         this.#modal = document.getElementById('gallery-modal');
         this.#modalTitle = document.getElementById('gallery-modal-title');
-        this.#modalBody = document.getElementById('gallery-modal-body');
+        this.#modalText = document.getElementById('gallery-modal-text');
+        this.#modalImages = document.getElementById('gallery-modal-images');
     }
 
     async build(dataFile) {
@@ -41,6 +43,10 @@ class Gallery {
             h3.innerText = fursuit.title[this.#lang];
             article.appendChild(h3);
         }
+
+        if (window.location.hash) {
+            this.#openModal(window.location.hash.substring(1));
+        }
     }
 
     async #openModal(id) {
@@ -49,15 +55,27 @@ class Gallery {
 
         const fursuit = this.#data[id];
 
-        this.#modalBody.innerHTML = fursuit.description[this.#lang];
+        this.#modalText.innerHTML = fursuit.description[this.#lang];
         this.#modalTitle.innerText = fursuit.title[this.#lang];
+        this.#modalImages.innerHTML = '';
 
         const files = await this.#fetch(`${this.#config.basePath}/${fursuit.directory}`);
 
         files.forEach(file => {
-            const img = document.createElement('img');
-            img.src = `${this.#config.basePath}/${fursuit.directory}/${file}`;
-            this.#modalBody.appendChild(img);
+            const filePath = `${this.#config.basePath}/${fursuit.directory}/${file}`;
+            const a = document.createElement('a');
+            a.href = filePath;
+            this.#modalImages.appendChild(a);
+
+            const article = document.createElement('article');
+            if (this.#config.lazyLoading) {
+                article.setAttribute('uk-img', '');
+                article.setAttribute('data-src', filePath)
+            }
+            else {
+                article.style.backgroundImage = `url('${filePath}')`;
+            }
+            a.appendChild(article);
         });
 
         window.location.hash = id;
