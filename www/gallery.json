@@ -109,7 +109,7 @@
     },
     "Flails": {
         "title": {"de": "Flails die Fledermaus", "en": "Flails the Bat"},
-        "directory": "talles",
+        "directory": "flails",
         "thumb": "thumbs/flailsthumb.jpg",
         "description": {
             "de": "<p>Ähnlich wie bei Gemma und Lambda war bei Flails der Kopf bereits vorhanden (gebaut von Fursonalities- Studio), der anschließend um den Body und die Pfoten erweitert wurde. Der suit wurde im Oktober 2018 fertiggestellt. Es ist der erste Suit mit Flügeln den ich bauen durfte. Um eine gute Benutzbarkeit zu garantieren habe ich die Flügel so leicht wie möglich gestaltet. Dazu wurden Karbonfaserstangen benutzt.<br> Mein Dank an dieser Stelle geht auch an Cypercreations für die Fotos die während eines Suitwalks geschossen wurden.</p><p>Flails auf Twitter: <a href=\"https://twitter.com/Shrinker42\" target=\"_blank\">Shrinker42</a><br> Fursonalities auf Twitter: <a href=\"https://twitter.com/Fursonalities\" target=\"_blank\">Fursonalities</a></p>",
@@ -170,9 +170,9 @@
             "en": "<p>Noweti, also know as Deerweti was the first deer Fursuit I made. He was finished in November 2017. <br> Many thanks to Sordeo for taking most of the beautiful picures here!</p><p>Noweti on Twitter: <a href=\"https://twitter.com/Noweti\" target=\"_blank\">Noweti</a><br> Sordeo on Twitter: <a href=\"https://twitter.com/sordeo\" target=\"_blank\">Sordeo</a></p>"
         }
     },
-    "Nercigami": {
+    "Necigami": {
         "title": {"de": "Necigami der Karacal", "en": "Necigami the Caracal"},
-        "directory": "nercigami",
+        "directory": "necigami",
         "thumb": "thumbs/necigamithumb.jpg",
         "description": {
             "de": "<p>Necigmai der Shinigami- Karacal ist ein Fursuit bei dem ich lediglich den Körper gemacht habe. Größte herrausforderung dabei bestand im komplexen Muster des Suits. Alles in allem sind 5 mal so viele Nähte nötig gewesen wie bei einem \"normalen\" suit. Der suit wurde im Mai 2017 fertiggestellt.</p>",
