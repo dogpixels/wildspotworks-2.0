@@ -18,6 +18,11 @@ class Gallery {
         this.#modalTitle = document.getElementById('gallery-modal-title');
         this.#modalText = document.getElementById('gallery-modal-text');
         this.#modalImages = document.getElementById('gallery-modal-images');
+
+        UIkit.util.on(this.#modal, 'hidden', () => {
+            console.log('Modal is hidden');
+            window.location.hash = '';
+        });
     }
 
     async build(dataFile) {
