@@ -19,8 +19,7 @@ class Gallery {
         this.#modalText = document.getElementById('gallery-modal-text');
         this.#modalImages = document.getElementById('gallery-modal-images');
 
-        UIkit.util.on(this.#modal, 'hidden', () => {
-            console.log('Modal is hidden');
+        UIkit.util.on(this.#modal, 'beforehide', () => {
             window.location.hash = '';
         });
     }
