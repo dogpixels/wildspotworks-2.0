@@ -1,5 +1,6 @@
 class Gallery {
     #config = {
+        basePath: 'img/gallery',
         lazyLoading: true
     }
     #lang = 'en';
@@ -28,10 +29,10 @@ class Gallery {
             const article = document.createElement('article');
             if (this.#config.lazyLoading) {
                 article.setAttribute('uk-img', '');
-                article.setAttribute('data-src', `img/gallery/${fursuit.thumb}`)
+                article.setAttribute('data-src', `${this.#config.basePath}/${fursuit.thumb}`)
             }
             else {
-                article.style.backgroundImage = `url('img/gallery/${fursuit.thumb}')`;
+                article.style.backgroundImage = `url('${this.#config.basePath}/${fursuit.thumb}')`;
             }
             article.addEventListener('click', () => { this.#openModal(id) });
             div.appendChild(article);
@@ -51,11 +52,11 @@ class Gallery {
         this.#modalBody.innerHTML = fursuit.description[this.#lang];
         this.#modalTitle.innerText = fursuit.title[this.#lang];
 
-        const files = await this.#fetch(`img/gallery/${fursuit.directory}`);
+        const files = await this.#fetch(`${this.#config.basePath}/${fursuit.directory}`);
 
         files.forEach(file => {
             const img = document.createElement('img');
-            img.src = `${fursuit.directory}/${file}`;
+            img.src = `${this.#config.basePath}/${fursuit.directory}/${file}`;
             this.#modalBody.appendChild(img);
         });
 
