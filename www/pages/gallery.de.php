@@ -4,7 +4,7 @@
     <p>An dieser Stelle möchte ich auch allen Suiteigentümern und ihren Fotografen dafür meinen Dank aussprechen, dass sie mir diese Bilder hier zur Verfügung gestellt haben.<p>
     <p><strong>Einfach auf die Bilder klicken :)</strong></p>
 
-    <div id="gallery" class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid></div>
+    <div id="gallery" class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-4@m" uk-scrollspy="cls: uk-animation-slide-bottom-small; target: article; delay: 50" uk-grid></div>
 </section>
 
 <div id="gallery-modal" class="uk-modal-container" uk-modal>
