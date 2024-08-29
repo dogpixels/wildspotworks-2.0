@@ -28,7 +28,7 @@
     },
     "staticOut": {
         "enabled": false,
-        "lastModifiedEnabled": true,
+        "lastModifiedEnabled": false,
         "lastModifiedMapFile": "modified.json",
         "path": "_static/",
         "targetBase": "https://dogpixels.net/wildspotworks/"
