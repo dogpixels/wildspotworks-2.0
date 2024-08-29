@@ -142,7 +142,7 @@
 			</nav>
 		</header>
 
-		<main>
+		<main<?= $core->current->category === 'home'? '' : ' class="page"' ?>>
 			<div id="content" uk-scrollspy="cls: uk-animation-slide-bottom-small; target: section; delay: 250">
 				<?= $core->get_content() ?>
 			</div>

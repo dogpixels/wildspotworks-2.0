@@ -164,7 +164,30 @@ nav span.uk-icon svg {
 main {
   position: relative;
   overflow: hidden;
+	background-image: none;
 }
+main.page {
+  background-image: url(../img/background.jpg);
+	background-color: #333;
+	background-repeat: no-repeat;
+}
+/* mobile browser do not support 
+   background-attachment: fixed for performance reasons,
+   the following fix enables it only on desktop */
+   @media only screen and (min-width: 1080px) {
+	main.page {
+		background-attachment: fixed;
+		background-size: cover;
+		background-position-x: center;
+	}
+}
+@media only screen and (max-width: 1080px) {
+	main.page {
+		background-attachment: scroll;
+		background-position-y: 0;
+	}
+}
+
 #content {
   margin-top: calc(var(--header-height) + 22.5px);
   min-height: calc(100vh - var(--header-height));
