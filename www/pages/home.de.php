@@ -1,6 +1,18 @@
 <section>
-	<h1>Wildspot Works: Individuelle Fursuits und Furry- Kostüme</h1>
+	<h1>Wildspot Works: Individuelle Fursuits und Furry-Kostüme</h1>
 	<div class="uk-column-1-2@l">
+		<div>
+			<?php if ($this->config->commissions->open) { ?>
+				<div class="uk-alert-success uk-text-center" uk-alert>
+					<a href="de/prices">Aktuell offen für neue Aufträge!</a>
+				</div>
+			<?php } else { ?>
+				<div class="uk-alert-danger uk-text-center" uk-alert>
+					Derzeit für neue Aufträge geschlossen.
+				</div>
+			<?php } ?>
+		</div>
+
 		<div>
 			<p>Wildspot Works ist ein kleines Fursuit Studio aus Deutschland, dass sich darauf spezialisiert hat maßgeschneiderte Tierkostüme sogenannte Fursuits zu bauen.<br />
 			Genau! Ich stelle Fursuits her.<br>
@@ -11,7 +23,7 @@
 			Eine Sache aber vorweg: Es mag banal klingen aber da es auch um eine Große Menge an Geld geht möchte ich hier noch einmal darauf hinweisen, solltest du dir schon sicher sein, ob du den suit kaufen möchtest oder das nur aus gesellschaftlichem Druck herraus tust um "dazu zu gehören". Nichts ist ärgerlicher als viel Geld für etwas auszugeben, was man am Ende gar nicht möchte...</p>
 		</div>
 
-		<div 
+		<div
 			class="consent-container" 
 			data-element-type="iframe"
 			data-attr-height="720"

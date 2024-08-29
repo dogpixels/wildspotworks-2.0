@@ -313,7 +313,8 @@ span.uk-icon-lift {
 .uk-modal-footer,
 .uk-input,
 .uk-textarea,
-.uk-button {
+.uk-button,
+.uk-alert {
   border-radius: 6px;
 }
 

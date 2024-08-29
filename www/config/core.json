@@ -1,5 +1,6 @@
 {
-    "convention": {
+    "commissions": {
+        "open": true
     },
     "defaults": {
         "externalEmbed": false,
@@ -347,5 +348,6 @@
             "title": "Welcome",
             "uri": "home.en.php"
         }
-    }
+    },
+    "convention": {}
 }
