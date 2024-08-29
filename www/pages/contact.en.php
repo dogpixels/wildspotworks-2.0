@@ -1,4 +1,4 @@
-<?php include_once("telegram.php"); ?>
+<?php include_once("src/telegram.php"); ?>
 
 <section uk-scrollspy="cls: uk-animation-slide-left-small; target: div; delay: 120">
     <h1>Send Message</h1>

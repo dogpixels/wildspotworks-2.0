@@ -45,5 +45,5 @@
 <script src="js/calculator.min.js"></script>
 <script>
     const calc = new Calc(document.getElementById('calc-options'), document.getElementById('calc-total'));
-    calc.build('prices.json');
+    calc.build('config/prices.json');
 </script>

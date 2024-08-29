@@ -103,6 +103,3 @@ class Gallery {
         return data;
     }
 }
-
-gallery = new Gallery();
-gallery.build('gallery.json');

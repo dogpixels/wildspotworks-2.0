@@ -1,8 +1,10 @@
 _workfiles/
 _deploy/
 www/modified.json
+
+# too many images
 www/img/gallery/*/
 www/img/pages/prices/*
 
-# telegram.php contains secrets
-www/telegram.php
+# telegram secrets
+www/config/telegram.php

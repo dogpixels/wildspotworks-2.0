@@ -17,3 +17,7 @@
 </div>
 
 <script src="../js/gallery.js"></script>
+<script>
+    const gallery = new Gallery();
+    gallery.build('config/gallery.json');
+</script>
