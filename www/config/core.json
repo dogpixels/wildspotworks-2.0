@@ -1,6 +1,6 @@
 {
     "commissions": {
-        "open": true
+        "open": false
     },
     "defaults": {
         "externalEmbed": false,
