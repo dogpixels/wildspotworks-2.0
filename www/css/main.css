@@ -2,7 +2,7 @@
   --header-height: 55px;
   --main-background: #a8cae9;
   --footer-background: #302c2b;
-  --footer-hedge-height: 110px;
+  --footer-hedge-height: 100px;
   --font-color: #000;
   
   /* nav pattern controls */
@@ -225,8 +225,9 @@ section ~ section {
 /* footer */
 footer {
   position: relative;
+  margin-top: calc(var(--footer-hedge-height) - 40px);
   padding: 20px;
-  background-image: url(../img/fleck2.png);
+  background-image: url(../img/footer.png);
   background-color: var(--footer-background);
 }
 footer > div {
@@ -242,9 +243,9 @@ footer:before {
   left: 0;
   width: 100%;
   height: var(--footer-hedge-height);
-  background-image: url(../img/fleck2_r.png);
+  background-image: url(../img/footer-over.png);
   /* disable until polishing */
-  display: none;
+  /* display: none; */
 }
 footer .uk-button-group {
   display: inline-flex;
