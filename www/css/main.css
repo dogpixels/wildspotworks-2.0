@@ -176,6 +176,7 @@ main {
   position: relative;
   overflow: hidden;
 	background-image: none;
+  padding-bottom: calc(var(--footer-hedge-height) - 40px);
 }
 main.page {
   background-image: url(../img/background.jpg);
@@ -225,7 +226,6 @@ section ~ section {
 /* footer */
 footer {
   position: relative;
-  margin-top: calc(var(--footer-hedge-height) - 40px);
   padding: 20px;
   background-image: url(../img/footer.png);
   background-color: var(--footer-background);
