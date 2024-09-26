@@ -81,7 +81,7 @@
 					"position": 1,
 					"item": 
 					{
-						"@id": "https://dogpixels.net/wildspotworks",
+						"@id": "https://lunowroo.dogpixels.net/",
 						"name": "WildSpotWorks" 
 					}
 				}
@@ -105,9 +105,10 @@
 			"@context": "http://schema.org",
 			"@type": "Organization",
 			"name": "WildSpotWorks",
-			"url": "https://dogpixels.net/wildspotworks",
+			"url": "https://lunowroo.dogpixels.net/",
 			"logo": "<?= $core->base ?>apple_favicon.png",
 			"sameAs": [
+				"https://meow.social/@lunowroo",
 				"https://twitter.com/wildspotworks"
 			]
 		}
