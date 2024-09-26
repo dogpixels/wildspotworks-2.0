@@ -85,13 +85,13 @@
         // validate Bot Check
         switch (event.target.querySelector('input[name="botchk_op"]').value) {
             case '+':
-                if (event.target.querySelector('input[name="botchk_opl"]').value + event.target.querySelector('input[name="botchk_opr"]').value != event.target.querySelector('input[name="botchk_res"]').value) {
+                if (Number(event.target.querySelector('input[name="botchk_opl"]').value) + Number(event.target.querySelector('input[name="botchk_opr"]').value) != Number(event.target.querySelector('input[name="botchk_res"]').value)) {
                     UIkit.notification("<span uk-icon='warning'></span> Bot Check math doesn't check out, try again.", {status: 'danger', pos: 'top-right'});
                     event.preventDefault();
                 };
                 break;
             case '-':
-                if (event.target.querySelector('input[name="botchk_opl"]').value - event.target.querySelector('input[name="botchk_opr"]').value != event.target.querySelector('input[name="botchk_res"]').value) {
+                if (Number(event.target.querySelector('input[name="botchk_opl"]').value) - Number(event.target.querySelector('input[name="botchk_opr"]').value) != Number(event.target.querySelector('input[name="botchk_res"]').value)) {
                     UIkit.notification("<span uk-icon='warning'></span> Bot Check math doesn't check out, try again.", {status: 'danger', pos: 'top-right'});
                     event.preventDefault();
                 };
