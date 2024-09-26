@@ -5,8 +5,7 @@ include_once('config/telegram.php');
 
 // init data structures
 $input = ['name' => '', 'email' => '', 'telegram' => '', 'message' => ''];
-// track submission success and errors
-$success = false;
+// track errors
 $errors = [];
 
 // sanitize input
@@ -18,6 +17,14 @@ if (isset($_POST['telegram']))
     $input['telegram'] = htmlspecialchars($_POST['telegram']);
 if (isset($_POST['message']))
     $input['message'] = htmlspecialchars($_POST['message']);
+if (isset($_POST['botchk_opl']))
+    $botchk_opl = htmlspecialchars($_POST['botchk_opl']);
+if (isset($_POST['botchk_op']))
+    $botchk_op  = htmlspecialchars($_POST['botchk_op']);
+if (isset($_POST['botchk_opr']))
+    $botchk_opr = htmlspecialchars($_POST['botchk_opr']);
+if (isset($_POST['botchk_res']))
+    $botchk_res = htmlspecialchars($_POST['botchk_res']);
 
 // submit on POST
 if (!empty($_POST)) {
@@ -28,6 +35,20 @@ if (!empty($_POST)) {
         $errors['contact'] = true;
     if (empty($input['message']))
         $errors['message'] = true;
+
+    switch ($botchk_op) {
+        case '+':
+            if ($botchk_opl + $botchk_opr != $botchk_res)
+                $errors['botchk'] = true;
+            break;
+        case '-':
+            if ($botchk_opl - $botchk_opr != $botchk_res)
+                $errors['botchk'] = true;
+            break;
+        default:
+            $errors['botchk'] = true;
+            break;
+    }
 
     if (empty($errors)) {
         { // prepare implodable array for optional contact strings
@@ -72,12 +93,26 @@ if (!empty($_POST)) {
             );
         }
 
-        { // exec api call & eval response
+        { // exec api call, eval response and redirect to prevent F5 submit.
             $response = curl_exec($curl);
             $success = json_decode($response)->ok;
+            if ($success) {
+                header(
+                    'Location: ' .
+                    (empty($_SERVER['HTTPS']) ? 'http' : 'https') .
+                    "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]" .
+                    "?success=" . $success
+                );
+            }
         }
     }
 }
+
+// generate Bot Check equation
+$botchk_arr = ['+', '-'];
+$botchk_op = $botchk_arr[array_rand($botchk_arr)];
+$botchk_opl = rand(0, 20);
+$botchk_opr = rand(0, $botchk_opl);
 
 function filter_tg_markdown(string $subject): string {
     return preg_replace('/([_\*\[\]\(\)~`>#\+\-=|{}.!])/', '\\\\$1', $subject);

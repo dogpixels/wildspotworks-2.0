@@ -12,37 +12,49 @@
             <div>
                 <div class="uk-inline uk-width-1-1">
                     <span class="uk-form-icon" uk-icon="user"></span>
-                    <input type="text" name="name" value="<?= $input['name'] ?>" placeholder="Dein Name" class="uk-input" aria-label="Dein Name" <?= $success? 'disabled': '' ?> />
+                    <input type="text" name="name" value="<?= $input['name'] ?>" placeholder="Dein Name" class="uk-input" aria-label="Dein Name"  />
                 </div>
             </div>
             <div class="uk-child-width-1-2@m uk-margin" uk-grid>
                 <div>
                     <div class="uk-inline uk-width-1-1">
                         <span class="uk-form-icon" uk-icon="mail"></span>
-                        <input type="email" name="email" value="<?= $input['email'] ?>" placeholder="Deine E-Mail-Adresse" class="uk-input" aria-label="Deine E-Mail-Adresse" <?= $success? 'disabled': '' ?> />
+                        <input type="email" name="email" value="<?= $input['email'] ?>" placeholder="Deine E-Mail-Adresse" class="uk-input" aria-label="Deine E-Mail-Adresse"  />
                     </div>
                 </div>
                 <div>
                     <div class="uk-inline uk-width-1-1">
                         <span class="uk-form-icon" uk-icon="telegram"></span>
-                        <input type="text" name="telegram" value="<?= $input['telegram'] ?>" placeholder="Dein Telegram" class="uk-input" aria-label="Dein Telegram-Handle" <?= $success? 'disabled': '' ?> />
+                        <input type="text" name="telegram" value="<?= $input['telegram'] ?>" placeholder="Dein Telegram" class="uk-input" aria-label="Dein Telegram-Handle"  />
                     </div>
                 </div>
             </div>
             <div>
-                <textarea name="message" class="uk-textarea uk-margin uk-width-1-1" rows="9" placeholder="Deine Nachricht" aria-label="Deine Nachricht" <?= $success? 'disabled': '' ?>><?= $input['message'] ?></textarea>
+                <textarea name="message" class="uk-textarea uk-margin uk-width-1-1" rows="9" placeholder="Deine Nachricht" aria-label="Deine Nachricht" ><?= $input['message'] ?></textarea>
             </div>
         </fieldset>
-        <div>
-            <input type="submit" value="<?= $success? '✅ Nachricht zugestellt': 'Absenden' ?>" class="uk-button uk-button-default uk-button-primary" <?= $success? 'disabled': '' ?> />
+        <div uk-grid>
+            <div>
+                <label for="botchk_res" class="uk-card uk-card-default uk-card-small uk-button" style="line-height: 36px; padding: 0 0 0 10px">
+                    <input type="hidden" name="botchk_opl" value="<?= $botchk_opl ?>" />
+                    <input type="hidden" name="botchk_op"  value="<?= $botchk_op ?>"  />
+                    <input type="hidden" name="botchk_opr" value="<?= $botchk_opr ?>" />
+                    <span uk-icon="happy" class="uk-icon-lift"></span>
+                    Bot Check: <?= $botchk_opl ?> <?= $botchk_op ?> <?= $botchk_opr ?> =
+                    <input type="text" name="botchk_res" id="botchk_res" class="uk-input uk-form-width-xsmall" inputmode="numeric" placeholder="?" />
+                </label>
+            </div>
+            <div>
+                <input type="submit" value="Absenden" class="uk-button uk-button-default uk-button-primary" />
+            </div>
         </div>
     </form>
 
-    <?php if (!empty($_POST) && $success) { ?>
+    <?php if (isset($_GET['success']) && $_GET['success'] == true) { ?>
         <div class="uk-alert-success" uk-alert><p>Danke, deine Nachricht wurde erhalten. Ich melde mich schnellstmöglich zurück!</p></div>
     <?php } ?>
     
-    <?php if (!empty($_POST) && !$success && empty($errors)) { ?>
+    <?php if (!empty($_POST) && empty($errors)) { ?>
         <div class="uk-alert-danger" uk-alert><p>Tut mir Leid, ein Fehler ist aufgetreten. Wenn es in ein Paar Minuten nicht geht, sag bitte über wildspotworks@gmail.com Bescheid!</p><p>Fehler-Details:</p><pre><?= json_encode(json_decode($response), JSON_PRETTY_PRINT) ?></pre></div>
     <?php } ?>
 </section>
@@ -68,6 +80,22 @@
         if (event.target.querySelector('textarea[name="message"]').value.length < 8) {
             UIkit.notification("<span uk-icon='warning'></span> Deine Nachricht ist etwas zu kurz.", {status: 'danger', pos: 'top-right'});
             event.preventDefault();
+        }
+
+        // validate Bot Check
+        switch (event.target.querySelector('input[name="botchk_op"]').value) {
+            case '+':
+                if (event.target.querySelector('input[name="botchk_opl"]').value + event.target.querySelector('input[name="botchk_opr"]').value != event.target.querySelector('input[name="botchk_res"]').value) {
+                    UIkit.notification("<span uk-icon='warning'></span> Bot Check-Rechnung stimmt nicht, bitte nochmal.", {status: 'danger', pos: 'top-right'});
+                    event.preventDefault();
+                };
+                break;
+            case '-':
+                if (event.target.querySelector('input[name="botchk_opl"]').value - event.target.querySelector('input[name="botchk_opr"]').value != event.target.querySelector('input[name="botchk_res"]').value) {
+                    UIkit.notification("<span uk-icon='warning'></span> Bot Check-Rechnung stimmt nicht, bitte nochmal.", {status: 'danger', pos: 'top-right'});
+                    event.preventDefault();
+                };
+                break;
         }
     })
 </script>
