@@ -116,6 +116,7 @@
 
 		<link rel="stylesheet" href="css/uikit.min.css" />
 		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/pride.css" />
 		<link rel="stylesheet" href="css/responsive.css" />
 		
 		<script src="js/uikit.min.js"></script>

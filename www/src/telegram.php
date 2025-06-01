@@ -50,7 +50,7 @@ if (!empty($_POST)) {
             break;
     }
 
-    if (empty($errors)) {
+    if (empty($errors) && $input['name'] !== 'Eric Jones') {
         { // prepare implodable array for optional contact strings
             $contacts = [];
 
